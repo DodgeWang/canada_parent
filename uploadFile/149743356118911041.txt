@@ -1,0 +1,1 @@
+surname	given_name	student_num	grade	gender	birthday	oen_num	father_last	father_first	mother_last	mother_first	advisory_ground	p1	p1_name	p1_mark	p1_absence	p1_late	p2	p2_name	p2_mark	p2_absence	p2_late	p3	p3_name	p3_mark	p3_absence	p3_late	accumulated_credit321	32	44	54	54	2	33	223	22	43	55	22	44	22	44	22	44	22	44	44	43	33	44	43	44	33	44	33
