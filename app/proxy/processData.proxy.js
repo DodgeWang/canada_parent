@@ -20,10 +20,7 @@ exports.importData = function(data,callback) {
     console.log(sqls)
 
     mysql.query({
-        sql: sqls,
-        params: {
-            "USERID": 1
-        }
+        sql: sqls
     }, function(err, rows) {
         if (err) {
             callback(new ServerError(), null);
@@ -32,7 +29,7 @@ exports.importData = function(data,callback) {
         if (rows && rows.length > 0) {
             callback(null, rows);
         } else {
-            callback(new DataNotFoundError(), null);
+            callback(null, null);
         }
     })
 }
