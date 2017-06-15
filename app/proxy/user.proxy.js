@@ -8,7 +8,7 @@ exports.getList = function(data,callback) {
         sql: sqls
     }, function(err, rows) {
         if (err) {
-            callback(new ServerError(), null);
+            callback(err, null);
         }
 
         if (rows && rows.length > 0) {
