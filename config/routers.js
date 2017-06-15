@@ -28,5 +28,7 @@ module.exports = function(app) {
 
     app.post('/user/resetPassword',user.resetPassword);  //重置用户密码
 
-    app.get('/classification/list',classification.list);  //获取图文分类列表
+    app.get('/classification/list',classification.getList);  //获取图文分类列表
+
+    app.post('/classification/add',classification.add);  //添加图文分类
 }
