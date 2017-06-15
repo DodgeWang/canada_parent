@@ -9,6 +9,6 @@ module.exports = {
         port: 3306, //数据库端口号
         user: 'root', //数据库用户名
         password: '000000', //密码
-        database: 'CanadaIEdu' //数据库名
+        database: 'canada' //数据库名
     }
 }
