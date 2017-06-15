@@ -32,3 +32,18 @@ exports.add = function(name,callback) {
         callback(null);
     })
 }
+
+
+
+exports.revise = function(data,callback) { 
+   var sqls = "UPDATE tbl_indexClassification SET name=" + data.name + " WHERE id=" + data.id;
+   console.log(sqls)
+   mysql.query({
+        sql: sqls
+    }, function(err, rows) {
+        if (err) {
+            callback(err);
+        }
+        callback(null);
+    })
+}

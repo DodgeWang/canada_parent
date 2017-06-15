@@ -31,4 +31,6 @@ module.exports = function(app) {
     app.get('/classification/list',classification.getList);  //获取图文分类列表
 
     app.post('/classification/add',classification.add);  //添加图文分类
+
+    app.post('/classification/revise',classification.revise); //修改图文分类名
 }
