@@ -1,10 +1,14 @@
 var processData = require('../app/controllers/processData.controller');
 var user = require('../app/controllers/user.controller');
-var classification = require('../app/controllers/classification.controller')
+var classification = require('../app/controllers/classification.controller');
+var administrators = require('../app/controllers/administrators.controller')
 
 module.exports = function(app) {
 
 	//html page routers
+    app.get('/login', function(req, res) {
+       res.sendfile('public/login.html')
+    });
     app.get('/index', function(req, res) {
         res.sendfile('public/index.html')
     });
@@ -22,6 +26,10 @@ module.exports = function(app) {
     });
 
     //api routers
+    app.post('/admin/login',administrators.login)//后台管理员登录  
+
+    app.get('/admin/exit',administrators.exit)  //退出后台系统 
+
     app.post('/fileuploads',processData.importData); //导入数据
 
     app.get('/user/list',user.getList); //获取用户列表

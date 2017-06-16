@@ -3,7 +3,18 @@ var path = require('path');
 var formidable = require('formidable'); //文件上传
 var parsingTxtFiles = require('../func/parsingTxtFiles.js') //解析上传的txt文件
 var processData = require('../proxy/processData.proxy.js')
+var resUtil  = require("../libs/resUtil");
+var config = require('../../config/env/statusConfig');
 
+
+
+/**
+ * 导入学生数据到数据库
+ * @param  {object}   req  the request object
+ * @param  {object}   res  the response object
+ * @param  {Function} next the next func
+ * @return {null}        
+ */
 exports.importData = function(req, res, next) {
     var form = new formidable.IncomingForm();
 
@@ -24,11 +35,11 @@ exports.importData = function(req, res, next) {
         if (err) return res.redirect(303, '/error');
 
         //打印上传内容
-        console.log('received fields:');
-        console.log(fields);
-        console.log("----------------")
-        console.log('received files:');
-        console.log(files);
+        // console.log('received fields:');
+        // console.log(fields);
+        // console.log("----------------")
+        // console.log('received files:');
+        // console.log(files);
 
         //文件上传时间戳
         var t = new Date().getTime();
@@ -83,11 +94,6 @@ exports.importData = function(req, res, next) {
 
                 
             });
-
-
-
-
-
 
 
             res.writeHead(200, { 'content-type': 'text/plain' });
