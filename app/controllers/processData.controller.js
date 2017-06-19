@@ -23,7 +23,7 @@ exports.importData = function(req, res, next) {
     //设置编辑
     form.encoding = 'utf-8';
     //设置文件存储路径
-    form.uploadDir = process.cwd() + '/uploadFile'; //保存文件上传路径
+    form.uploadDir = process.cwd() + '/uploadFile/dataFile'; //保存文件上传路径
     //保留后缀
     form.keepExtensions = true;
     //设置单文件大小限制    
@@ -50,7 +50,7 @@ exports.importData = function(req, res, next) {
         //旧的路径名
         var oldpath = files.file.path;
         //新的路径名
-        var newpath = process.cwd() + '/uploadFile/' + t + ran + extname;
+        var newpath = process.cwd() + '/uploadFile/dataFile/' + t + ran + extname;
 
         //改名
         fs.rename(oldpath, newpath, function(err) {
