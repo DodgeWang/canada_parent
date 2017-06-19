@@ -1,8 +1,0 @@
-name	number	s1t1	s2t1	s3t1	s1t2	s2t2	s3t2	total cred
-Bai, xxxx	000904	12	12		12	12		5.00
-Bai, xxxx	001013	2		10	2		10	2.00
-Bao, xxxx	001006	10	12	12	10	12	12	8.00
-Bi, xxxx	000963							0.00
-Bian, xxx	000950	12	11	12	12	11	12	8.00
-Cai, xxx	000936	10	12	12	10	12	12	8.00
-Zhuang, xxx	000739	12	12		12	12		4.00
