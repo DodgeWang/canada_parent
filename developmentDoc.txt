@@ -12,6 +12,9 @@
 
 
 管理员密码修改：请求方式（post）上传参数（旧密码、新密码）
+/admin/resetPassword
+参数：oldpassword(旧密码)  newpassword(新密码)
+
 
 首页轮播图片：
 1.图片上传：请求方式（post） 上传参数（封面图）

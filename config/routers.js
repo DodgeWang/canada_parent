@@ -5,7 +5,9 @@ var administrators = require('../app/controllers/administrators.controller')
 
 module.exports = function(app) {
 
-	//html page routers
+    /**
+     * html page routers
+     */
     app.get('/login', function(req, res) {
        res.sendfile('public/login.html')
     });
@@ -25,10 +27,24 @@ module.exports = function(app) {
         res.sendfile('public/tpls/importData.html')
     });
 
-    //api routers
-    app.post('/admin/login',administrators.login)//后台管理员登录  
+    app.get('/resetPassword',function(req, res) {
+        res.sendfile('public/tpls/resetPassword.html')
+    });
 
-    app.get('/admin/exit',administrators.exit)  //退出后台系统 
+    
+
+
+
+    /**
+     * api routers
+     */
+    app.post('/admin/login',administrators.login);//后台管理员登录  
+
+    app.get('/admin/managerInfo',administrators.managerInfo);//获取管理员信息
+
+    app.get('/admin/exit',administrators.exit);  //退出后台系统 
+
+    app.post('/admin/resetPassword',administrators.resetPassword);  //修改管理员密码
 
     app.post('/fileuploads',processData.importData); //导入数据
 

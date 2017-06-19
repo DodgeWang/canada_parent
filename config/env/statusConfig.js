@@ -19,6 +19,28 @@ module.exports = {
         STATUS_DBERROR: {
         	code:4,
         	msg:'数据库错误'
-        }
+        },
+        STATUS_PASSERROR: {
+            code:-1,
+            msg:'旧密码不正确，修改失败'
+        },
+    },
+    AdminStatus: {
+       SUCCESS: {
+           code:0,
+           msg:'登陆成功'
+       },
+       USER_ERROR: {
+           code:1001,
+           msg: '登陆用户不存在'
+       },
+       PASSWORD_ERROR: {
+           code:1002,
+           msg: '密码错误'
+       },
+       EXIT_SUCCESS:{
+           code:0,
+           msg: '成功退出'
+       }
     }
 }

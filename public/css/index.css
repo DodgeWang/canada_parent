@@ -9,6 +9,7 @@ ul,
 li {
     padding: 0px;
     margin: 0px;
+    list-style: none;
 }
 
 .page-left {
@@ -98,6 +99,8 @@ li {
     line-height: 20px;
     font-family: "microsoft yahei";
     cursor: pointer;
+    text-decoration: none;
+    color: #000000;
 }
 
 .page-top-box>ul>li>.page-top-nav .icon {
@@ -142,7 +145,23 @@ li {
     color: #000000;
 }
 
+
 #page-content {
     border: 0px;
     margin-top: 4px;
+}
+
+
+
+.login-bg{
+    background: #efefef; 
+}
+.login-box{
+    width: 400px;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 20px;
+    margin:200px auto 0 auto;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px #8b8b8b;
 }

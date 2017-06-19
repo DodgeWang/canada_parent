@@ -21,14 +21,12 @@ module.exports = function() {
 
 
     app.use(function(req, res, next) {
-        // if(req.url == '/admin/login' || req.url == '/login') return next();
-        // if(!req.session.administrator){
-        //    res.redirect('/login')
-        // }else{
-        //    next();
-        // }
-
-        next();
+        if(req.url == '/admin/login' || req.url == '/login' || req.url == '/admin/exit') return next();
+        if(!req.session.administrator){
+           res.redirect('/login')
+        }else{
+           next();
+        }
     })
 
     routers(app);

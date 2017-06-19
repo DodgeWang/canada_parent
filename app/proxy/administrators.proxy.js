@@ -1,13 +1,22 @@
 var mysql = require('../../config/mysql');
+var encryption = require("../func/encryption");
 
 
+/**
+ * 后台管理员登陆
+ * @param  {string}   username   用户名     
+ * @param  {Function} callback 回调函数
+ * @return {null}
+ */
 exports.login = function(username,callback) {
-   var sqls = "SELECT * FROM tbl_administrators where username=" + username;
    mysql.query({
-        sql: sqls
+        sql: "SELECT * FROM tbl_administrators where username = :username",
+        params  : {
+           "username": username
+        }
     }, function(err, rows) {
         if (err) {
-            callback(new ServerError(), null);
+            callback(err, null);
         }
 
         if (rows && rows.length > 0) {
@@ -15,5 +24,26 @@ exports.login = function(username,callback) {
         } else {
             callback(null, null);
         }
+    })
+}
+
+
+/**
+ * 后台管理员修改登陆密码
+ * @param  {number}   Id   用户id 
+ * @param  {string}   password   用户新密码   
+ * @param  {Function} callback 回调函数
+ * @return {null}
+ */
+exports.resetPassword = function(Id,password,callback) {
+   var newPass = encryption.md5(password,32);
+   var sqls = "UPDATE tbl_administrators SET password='" + newPass + "' WHERE id=" + userId;
+   mysql.query({
+        sql: sqls
+    }, function(err, rows) {
+        if (err) {
+            callback(err);
+        }
+        callback(null);
     })
 }
