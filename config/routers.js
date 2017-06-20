@@ -8,9 +8,11 @@ module.exports = function(app) {
     /**
      * html page routers
      */
+    //登陆页面
     app.get('/login', function(req, res) {
        res.sendfile('public/login.html')
     });
+    //首页
     app.get('/index', function(req, res) {
         res.sendfile('public/index.html')
     });
@@ -23,18 +25,22 @@ module.exports = function(app) {
     app.get('/activity', function(req, res) {
         res.sendfile('public/tpls/activityManagement.html')
     });
+    //导入数据页面
     app.get('/importData', function(req, res) {
         res.sendfile('public/tpls/importData.html')
     });
-
+    //修改管理员密码页面
     app.get('/resetPassword',function(req, res) {
         res.sendfile('public/tpls/resetPassword.html')
     });
-
+    //分类页面列表
     app.get('/classificationList', function(req, res) {
         res.sendfile('public/tpls/classificationList.html')
     });
-
+    //添加分类页面
+    app.get('/addClassification', function(req, res) {
+        res.sendfile('public/tpls/addClassification.html')
+    });
     
 
 

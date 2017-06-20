@@ -51,6 +51,7 @@ function initMysqlPool () {
  * @return {null}            
  */
 exports.query = function (sqlReq, callback) {
+    console.log(sqlReq)
     //sql, params
     if (!mysqlPool) {
         initMysqlPool();

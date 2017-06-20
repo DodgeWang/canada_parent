@@ -39,12 +39,19 @@ exports.add = function(name,callback) {
 }
 
 
-
+/**
+ * 修改图文分类名
+ * @param  {obj}   data   包含id(分类id),name(修改的名称)     
+ * @param  {Function} callback 回调函数
+ * @return {null}
+ */
 exports.revise = function(data,callback) { 
-   var sqls = "UPDATE tbl_indexClassification SET name=" + data.name + " WHERE id=" + data.id;
-   console.log(sqls)
    mysql.query({
-        sql: sqls
+        sql: "UPDATE tbl_indexClassification SET name = :name WHERE id = :id",
+        params  : {
+           "name": data.name,
+           "id": data.id
+        }
     }, function(err, rows) {
         if (err) {
             callback(err);

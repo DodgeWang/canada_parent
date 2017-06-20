@@ -53,12 +53,12 @@ exports.add = function(req, res, next) {
 exports.revise = function(req, res, next) {
 	if(!req.body.id || !req.body.name) return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
 	var data = {
-		id:req.body.id,
+		id:parseInt(req.body.id),
 		name:req.body.name
 	}
     classification.revise(data,function(err) {
         if (err) {
-            return res.json(resUtil.generateRes(null, {code:err.statusCode}));
+            return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));
         }
        res.json(resUtil.generateRes(null, config.statusCode.STATUS_OK));
     })

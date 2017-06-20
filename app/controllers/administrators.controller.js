@@ -77,9 +77,6 @@ exports.exit = function(req,res,next) {
 exports.resetPassword = function(req,res,next) {
     if(!req.body.oldpassword || !req.body.newpassword) return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
     if(encryption.md5(req.body.oldpassword,32) !== req.session.administrator.password) return res.json(resUtil.generateRes(null, config.AdminStatus.RESET_ERROR));
-    console.log(encryption.md5(req.body.oldpassword,32));
-    console.log(req.session.administrator.password)
-    console.log(req.session.administrator)
     administrators.resetPassword(req.session.administrator.id,req.body.newpassword,function(err,rows) {
         if (err) {
             return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));
