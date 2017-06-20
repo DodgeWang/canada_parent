@@ -31,6 +31,10 @@ module.exports = function(app) {
         res.sendfile('public/tpls/resetPassword.html')
     });
 
+    app.get('/classificationList', function(req, res) {
+        res.sendfile('public/tpls/classificationList.html')
+    });
+
     
 
 

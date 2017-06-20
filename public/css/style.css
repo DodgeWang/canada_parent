@@ -1,0 +1,90 @@
+.formBox{
+	width: 300px;
+	margin:0 auto;
+}
+
+.formBox>ul>li{
+    /*width: 100%;*/
+    margin-bottom: 20px;
+    /*overflow: hidden;*/
+    height: 30px;
+    position: relative;
+}
+.formBox>ul>li>span{
+	height: 30px;
+	font-size: 14px;
+	font-family: 'microsoft yahei';
+	line-height: 30px;
+	display: block;
+}
+
+.formBox>ul>li>.formBoxTitle{
+	float: left;
+	color: #000000;
+	display: block;
+	width: 90px;
+	text-align: right;
+}
+
+.formBox>ul>li>.formBoxError{
+	display: block;
+    position: absolute;
+    top:0px;
+    left: 310px;
+    color:red;
+    z-index: 1000;
+    width: 200px;
+    font-size: 12px;
+    display: none;
+}
+
+.formBox>ul>li>.formBoxText{
+	width: 178px;
+    height: 18px;
+    border: 1px solid #000000;
+    padding: 5px 10px;
+    margin-left: 10px;
+    float: left;
+}
+.formBox>ul>li>.formBoxButton{
+	display: block;
+    width: 80px;
+    height: 26px;
+    margin: 2px 0 2px 100px;
+    background: #2d2d2b;
+    border: 0px;
+    color: #ffffff;
+}
+
+
+.tableBox{
+    width: 100%;
+    overflow: scroll;
+}
+.tableBox>table{
+    width: 100%;
+    border-top: 1px solid #2d2d2b;
+    border-left: 1px solid #2d2d2b;
+}
+
+.tableBox>table tr th, .tableBox>table tr td{
+    padding: 5px;
+    border-right: 1px solid #2d2d2b;
+    border-bottom: 1px solid #2d2d2b;
+    font-size: 13px;
+    font-family: 'microsoft yahei';
+    line-height: 20px;
+    text-align: center;
+}
+
+.tableBox>table tr th{
+    background: #2d2d2b;
+    color:#ffffff;
+}
+
+
+
+
+
+
+

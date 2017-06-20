@@ -1,14 +1,19 @@
 var mysql = require('../../config/mysql');
 
 
-
+/**
+ * 获取图文分类列表
+ * @param  {string}   username   用户名     
+ * @param  {Function} callback 回调函数
+ * @return {null}
+ */
 exports.getList = function(callback) { 
    var sqls = "SELECT * FROM tbl_indexClassification";
    mysql.query({
         sql: sqls
     }, function(err, rows) {
         if (err) {
-            callback(new ServerError(), null);
+            callback(err, null);
         }
 
         if (rows && rows.length > 0) {

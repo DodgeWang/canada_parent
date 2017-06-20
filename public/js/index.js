@@ -1,7 +1,26 @@
 $(function() {
     pageframe();
-    $.get("/admin/managerInfo",function(obj){
-        if(obj.status.code === 0) $("#username").text(obj.data.username);
+    $.get("/admin/managerInfo", function(obj) {
+        if (obj.status.code === 0) $("#username").text(obj.data.username);
+    })
+
+    $("#UserSettingButton").click(function() {
+        $("#UserSettingBox").fadeToggle(200);
+    })
+
+
+    $(".first-nav").click(function() {
+        $(this).parent().find('ul').toggle(300);
+    })
+
+    //退出登录
+    $("#exit").click(function() {
+        var r = confirm("您确定退出后台管理系统？")
+        if (r == true) {
+            $.get("/admin/exit", function(obj) {
+                if (obj.status.code === 0) window.open('/login', '_self');
+            })
+        }
     })
 })
 
@@ -19,20 +38,5 @@ function pageframe() {
     $("#page-content").width(win_Width - 180);
     $("#page-menu").height(win_Height - 100);
 
-    
+
 }
-
-$("#UserSettingButton").click(function() {
-    $("#UserSettingBox").fadeToggle(200);
-})
-
-
-//退出登录
-$("#exit").click(function() {
-    var r = confirm("您确定退出后台管理系统？")
-    if (r == true) {
-        $.get("/admin/exit",function(obj){
-            if(obj.status.code === 0) window.open('/login', '_self');
-        })
-    }
-})

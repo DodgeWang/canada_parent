@@ -14,7 +14,7 @@ exports.getList = function(req, res, next) {
 
     classification.getList(function(err, rows) {
         if (err) {
-            return res.json(resUtil.generateRes(null, {code:err.statusCode}));
+            return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));
         }
         
         res.json(resUtil.generateRes(rows, config.statusCode.STATUS_OK));

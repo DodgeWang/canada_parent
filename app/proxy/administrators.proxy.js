@@ -37,9 +37,12 @@ exports.login = function(username,callback) {
  */
 exports.resetPassword = function(Id,password,callback) {
    var newPass = encryption.md5(password,32);
-   var sqls = "UPDATE tbl_administrators SET password='" + newPass + "' WHERE id=" + userId;
    mysql.query({
-        sql: sqls
+        sql: "UPDATE tbl_administrators SET password = :newPass WHERE id = :Id",
+        params  : {
+           "newPass": newPass,
+           "Id": Id
+        }
     }, function(err, rows) {
         if (err) {
             callback(err);

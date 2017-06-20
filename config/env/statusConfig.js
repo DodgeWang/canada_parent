@@ -2,7 +2,7 @@ module.exports = {
     statusCode: {
         STATUS_OK: {
         	code:0,
-        	msg:'操作成功'
+        	msg:'成功'
         },
         STATUS_NOTFOUND: {
         	code:1,
@@ -41,6 +41,14 @@ module.exports = {
        EXIT_SUCCESS:{
            code:0,
            msg: '成功退出'
+       },
+       RESET_SUCCESS: {
+           code:0,
+           msg: '密码修改成功'
+       },
+       RESET_ERROR: {
+           code:1003,
+           msg: '密码不正确'
        }
     }
 }

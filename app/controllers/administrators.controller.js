@@ -26,7 +26,7 @@ exports.login = function(req, res, next) {
 
         if(password == rows.password){
         	//登陆账号密码都正确
-        	req.session.administrator = {id:rows.id,username:rows.username};
+        	req.session.administrator = rows;
         	res.json(resUtil.generateRes(rows, config.AdminStatus.SUCCESS));
         }else{
         	//登陆密码错误
@@ -46,7 +46,11 @@ exports.login = function(req, res, next) {
  * @return {null}     
  */
 exports.managerInfo = function(req,res,next) {
-    res.json(resUtil.generateRes(req.session.administrator, config.statusCode.STATUS_OK))
+    var data = {
+        id: req.session.administrator.id,
+        username: req.session.administrator.username
+    }
+    res.json(resUtil.generateRes(data, config.statusCode.STATUS_OK))
 }
 
 
@@ -72,11 +76,15 @@ exports.exit = function(req,res,next) {
  */
 exports.resetPassword = function(req,res,next) {
     if(!req.body.oldpassword || !req.body.newpassword) return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
-    if(encryption.md5(req.body.oldpassword,32) !== req.session.administrator) return res.json(resUtil.generateRes(null, config.statusCode.STATUS_PASSERROR))
+    if(encryption.md5(req.body.oldpassword,32) !== req.session.administrator.password) return res.json(resUtil.generateRes(null, config.AdminStatus.RESET_ERROR));
+    console.log(encryption.md5(req.body.oldpassword,32));
+    console.log(req.session.administrator.password)
+    console.log(req.session.administrator)
     administrators.resetPassword(req.session.administrator.id,req.body.newpassword,function(err,rows) {
         if (err) {
-            return res.json(resUtil.generateRes(null, {code:err.statusCode}));
+            return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));
         }
-        res.json(resUtil.generateRes(null, config.statusCode.STATUS_OK));
+        delete req.session.administrator;
+        res.json(resUtil.generateRes(null, config.AdminStatus.RESET_SUCCESS));
     })
 }
