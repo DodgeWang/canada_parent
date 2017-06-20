@@ -7,8 +7,6 @@ $(function() {
                 password: password
             },
             function(obj) {
-                console.log(obj);
-                // if(obj.)
                 if (obj.status.code !== 0) {
                     alert(obj.status.msg);
                 } else {
