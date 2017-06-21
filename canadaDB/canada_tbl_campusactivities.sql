@@ -27,6 +27,7 @@ CREATE TABLE `tbl_campusactivities` (
   `imgpath` varchar(255) DEFAULT NULL,
   `title` varchar(60) NOT NULL,
   `url` varchar(255) NOT NULL,
+  `classifyId` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

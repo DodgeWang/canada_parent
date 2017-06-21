@@ -1,7 +1,8 @@
 var processData = require('../app/controllers/processData.controller');
 var user = require('../app/controllers/user.controller');
 var classification = require('../app/controllers/classification.controller');
-var administrators = require('../app/controllers/administrators.controller')
+var administrators = require('../app/controllers/administrators.controller');
+var activity = require('../app/controllers/activity.controller')
 
 module.exports = function(app) {
 
@@ -67,4 +68,9 @@ module.exports = function(app) {
     app.post('/classification/add',classification.add);  //添加图文分类
 
     app.post('/classification/revise',classification.revise); //修改图文分类名
+
+    app.get('/activity/list',activity.getList); //获取活动列表
+
+    app.get('/activity/delete',activity.deleteData); //根据ID删除活动
+
 }
