@@ -62,3 +62,8 @@
 上传文件夹：
 dataUpload（导入学生信息数据的文本文件）
 imgUpload（上传的活动图片和首页轮播图片）
+
+
+上传数据表的格式：
+UTF-8 Unicode 文本（.txt）
+

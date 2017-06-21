@@ -2,8 +2,7 @@ var mysql = require('../../config/mysql');
 
 
 /**
- * 获取图文分类列表
- * @param  {string}   username   用户名     
+ * 获取图文分类列表    
  * @param  {Function} callback 回调函数
  * @return {null}
  */
@@ -25,11 +24,18 @@ exports.getList = function(callback) {
 }
 
 
+/**
+ * 添加图文分类
+ * @param  {string}   name   新添加的分类名     
+ * @param  {Function} callback 回调函数
+ * @return {null}
+ */
 exports.add = function(name,callback) { 
-   var sqls = "INSERT INTO tbl_indexClassification (`name`) VALUES (" + name +")";
-   console.log(sqls)
    mysql.query({
-        sql: sqls
+        sql: "INSERT INTO tbl_indexClassification (`name`) VALUES ( :name )",
+        params  : {
+           "name": name
+        }
     }, function(err, rows) {
         if (err) {
             callback(new ServerError());

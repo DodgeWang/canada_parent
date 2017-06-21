@@ -5,6 +5,7 @@ var parsingTxtFiles = require('../func/parsingTxtFiles.js') //解析上传的txt
 var processData = require('../proxy/processData.proxy.js')
 var resUtil  = require("../libs/resUtil");
 var config = require('../../config/env/statusConfig');
+var iconv = require('iconv-lite');
 
 
 
@@ -67,11 +68,12 @@ exports.importData = function(req, res, next) {
                     console.error(err);
                     return;
                 }
-                console.log(data)
+                // console.log(data)
+                data = iconv.decode(data, 'GBK');
                 var Infolist = data.split("\r\n");
-                console.log(Infolist)
                 var excellist = [];
                 var nameList = Infolist[0].split(/\t/);
+                // console.log(nameList)
                 for (var i = 1; i < Infolist.length - 1; i++) {
                     var obj = {};
                     var dataList = Infolist[i].split(/\t/);
@@ -83,13 +85,13 @@ exports.importData = function(req, res, next) {
 
                 //存入数据库
                 console.log(excellist)
-                console.log(fields.fileType)
-                processData.importData(excellist,function(err,rows){
-                	if (err) {
-                       return res.send("123");
-                    }
-                	console.log("王代强：",rows)
-                })
+                // console.log(fields.fileType)
+                // processData.importData(excellist,function(err,rows){
+                // 	if (err) {
+                //        return res.send("123");
+                //     }
+                // 	console.log("王代强：",rows)
+                // })
                
 
                 
@@ -100,4 +102,9 @@ exports.importData = function(req, res, next) {
             res.end("成功");
         });
     });
+
+
 }
+
+
+

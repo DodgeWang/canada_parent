@@ -37,9 +37,6 @@ $(function() {
     		}
     	})
     })
-
-
-
 })
 
 function edit(id,name){

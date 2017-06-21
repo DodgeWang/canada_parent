@@ -13,10 +13,11 @@ var config = require('../../config/env/statusConfig');
  */
 exports.getList = function(req, res, next) {
     if (!req.query.page || !req.query.size) return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
-
-    user.getList(req.query, function(err, rows) {
+    var page = Number(req.query.page);
+    var size = Number(req.query.size); 
+    user.getList(page,size, function(err, rows) {
         if (err) {
-            return res.json(resUtil.generateRes(null, {code:err.statusCode}));
+            return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));
         }
         res.json(resUtil.generateRes(rows, config.statusCode.STATUS_OK));
     })
@@ -35,7 +36,7 @@ exports.resetPassword = function(req, res, next){
     
     user.resetPassword(req.body.userId, function(err) {
         if (err) {
-            return res.json(resUtil.generateRes(null, {code:err.statusCode}));
+            return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));
         }
         res.json(resUtil.generateRes(null, config.statusCode.STATUS_OK));
     })
