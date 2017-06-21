@@ -5,7 +5,6 @@ var parsingTxtFiles = require('../func/parsingTxtFiles.js') //解析上传的txt
 var processData = require('../proxy/processData.proxy.js')
 var resUtil  = require("../libs/resUtil");
 var config = require('../../config/env/statusConfig');
-var iconv = require('iconv-lite');
 
 
 
@@ -68,30 +67,32 @@ exports.importData = function(req, res, next) {
                     console.error(err);
                     return;
                 }
-                // console.log(data)
-                data = iconv.decode(data, 'GBK');
+                console.log(data)
                 var Infolist = data.split("\r\n");
                 var excellist = [];
                 var nameList = Infolist[0].split(/\t/);
-                // console.log(nameList)
+                console.log(nameList.join(','))
+                // for (var i = 1; i < Infolist.length - 1; i++) {
+                //     var obj = {};
+                //     var dataList = Infolist[i].split(/\t/);
+                //     for (var s = 0; s < dataList.length; s++) {
+                //         obj[nameList[s]] = dataList[s];
+                //     }
+                //     excellist.push(obj)
+                // }
                 for (var i = 1; i < Infolist.length - 1; i++) {
-                    var obj = {};
                     var dataList = Infolist[i].split(/\t/);
-                    for (var s = 0; s < dataList.length; s++) {
-                        obj[nameList[s]] = dataList[s];
-                    }
-                    excellist.push(obj)
+                    excellist.push(dataList)
                 }
-
                 //存入数据库
                 console.log(excellist)
                 // console.log(fields.fileType)
-                // processData.importData(excellist,function(err,rows){
-                // 	if (err) {
-                //        return res.send("123");
-                //     }
-                // 	console.log("王代强：",rows)
-                // })
+                processData.importData(excellist,function(err,rows){
+                	if (err) {
+                       return res.send("123");
+                    }
+                	console.log("王代强：",rows)
+                })
                
 
                 

@@ -24,9 +24,9 @@ DROP TABLE IF EXISTS `tbl_studentinfo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_studentinfo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `surname` varchar(45) NOT NULL,
-  `given_name` varchar(45) NOT NULL,
-  `student_num` varchar(255) NOT NULL,
+  `surname` varchar(45) NULL,
+  `given_name` varchar(45) NULL,
+  `student_num` varchar(255) NULL,
   `grade` varchar(255) DEFAULT NULL,
   `gender` enum('boy','girl') DEFAULT NULL,
   `birthday` date DEFAULT NULL,
@@ -34,8 +34,8 @@ CREATE TABLE `tbl_studentinfo` (
   `father_first` varchar(45) DEFAULT NULL,
   `mother_last` varchar(45) DEFAULT NULL,
   `mother_first` varchar(45) DEFAULT NULL,
-  `oen_num` varchar(255) NOT NULL,
-  `advisory_ground` varchar(60) DEFAULT NULL,
+  `oen_num` varchar(255) NULL,
+  `advisory_group` varchar(60) DEFAULT NULL,
   `p1` varchar(45) DEFAULT NULL,
   `p1_name` varchar(60) DEFAULT NULL,
   `p1_mark` float(5,2) DEFAULT NULL,
