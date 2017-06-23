@@ -17,14 +17,20 @@ module.exports = function(app) {
     app.get('/index', function(req, res) {
         res.sendfile('public/index.html')
     });
+    //用户管理页面
     app.get('/userManager', function(req, res) {
         res.sendfile('public/tpls/userManager.html')
     });
     app.get('/administrator', function(req, res) {
         res.sendfile('public/tpls/administrator.html')
     });
+    //活动管理页面
     app.get('/activity', function(req, res) {
         res.sendfile('public/tpls/activityManagement.html')
+    });
+    //添加活动页面
+    app.get('/addActivity', function(req, res) {
+        res.sendfile('public/tpls/addActivity.html')
     });
     //导入数据页面
     app.get('/importData', function(req, res) {

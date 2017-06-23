@@ -25,7 +25,7 @@
  
 3.活动列表：请求方式（get）   上传参数（分类id、查询条数、查询页数）
 /activity/list
-参数：classifyId(分类id)、page(页码1开始)、size(显示条数)
+参数：classifyId(分类id,-1时代表查询全部)、page(页码1开始)、size(显示条数)
 
 
 4.活动详情：请求方式（get）   上传参数（活动id）

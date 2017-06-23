@@ -23,35 +23,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td>1</td>
                         <td>测试</td>
                         <td>
                             <button class="red_button" onclick="resetPass(1)">重置密码</button>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
-            <div class="page-box">
-            	<button id="prev">上一页</button>
-            	<button id="next">下一页</button>
+            <div id="noDataBox" class="noDataBox">
+                暂时没有数据
             </div>
-        </div>
-        <div id="editBox">
-            <div class="formBox">
-                <ul>
-                    <li style="display: none;">
-                        <span class="formBoxTitle">类ID：</span>
-                        <input type="text" name="classifiId" class="formBoxText" />
-                    </li>
-                    <li>
-                        <span class="formBoxTitle">类名：</span>
-                        <input type="text" name="name" class="formBoxText" />
-                    </li>
-                    <li>
-                        <button class="formBoxButton" id="formSubmit">确认</button>
-                    </li>
-                </ul>
+            <div id="pageBox" class="page-box">
+                <button id="prev">上一页</button>
+                <button id="next">下一页</button>
             </div>
         </div>
     </div>

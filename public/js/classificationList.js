@@ -8,15 +8,19 @@ $(function() {
                	  var name = obj.data[i].name;
                	  var nameStr = '"'+name+'"';
                	  var id = obj.data[i].id;
-               	  var htmlStr = "<tr><td>"+(i+1)+"</td><td>"+name+"</td><td><button class='green_button' onclick='edit("+id+","+nameStr+")'>修改</button></td></tr>"  
+               	  var htmlStr = "<tr>\
+                      <td>"+(i+1)+"</td>\
+                      <td>"+name+"</td>\
+                      <td>\
+                        <button class='green_button' onclick='edit("+id+","+nameStr+")'>修改</button>\
+                      </td>\
+                    </tr>"  
+
                	  $("#datalist").append(htmlStr)
                }
             }
         }
     })
-    
-    $("#coverCloth").height($(".contentbox").outerHeight())
-    $("#coverCloth").width($(".contentbox").outerWidth())
     
     $("#coverCloth").click(function(){
     	coverFun()
@@ -40,6 +44,8 @@ $(function() {
 })
 
 function edit(id,name){
+    $("#coverCloth").height($(".contentbox").outerHeight())
+    $("#coverCloth").width($(".contentbox").outerWidth())
     coverFun()
     $("#editBox input[name='name']").val(name);
     $("#editBox input[name='classifiId']").val(id);

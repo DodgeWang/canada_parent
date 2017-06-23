@@ -9,8 +9,15 @@ var mysql = require('../../config/mysql');
  */
 exports.getList = function(classifyId,page,size,callback) { 
    var limit_Start = (page - 1) * size;
+   var sqls = '';
+   if(classifyId === -1){
+      sqls = "SELECT tbl_campusactivities.*,tbl_indexclassification.name FROM tbl_campusactivities,tbl_indexclassification where tbl_campusactivities.classifyId = tbl_indexclassification.id order by id desc limit :limit_Start,:size";
+   }else{
+      // sqls = "SELECT * FROM tbl_campusactivities where classifyId = :classifyId order by id desc limit :limit_Start,:size";
+      sqls = "SELECT tbl_campusactivities.*,tbl_indexclassification.name FROM tbl_campusactivities,tbl_indexclassification where tbl_campusactivities.classifyId = :classifyId and tbl_campusactivities.classifyId = tbl_indexclassification.id order by id desc limit :limit_Start,:size";
+   }
    mysql.query({
-        sql: "SELECT * FROM tbl_campusactivities where classifyId = :classifyId order by id desc limit :limit_Start,:size",
+        sql: sqls,
         params  : {
            "classifyId": classifyId,
            "limit_Start": limit_Start,
