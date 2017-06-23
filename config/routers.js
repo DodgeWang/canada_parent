@@ -79,4 +79,6 @@ module.exports = function(app) {
 
     app.get('/activity/delete',activity.deleteData); //根据ID删除活动
 
+    app.post('/activity/add',activity.add); //添加活动
+
 }

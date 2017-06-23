@@ -53,13 +53,14 @@ exports.deleteData = function(req, res, next){
  * @return {null}     
  */
 exports.add = function(req, res, next) {
+    console.log(req)
     var form = new formidable.IncomingForm();
     // console.log(__dirname)  //__dirname值当前文件所在路径
     // console.log(process.cwd())  //process.cwd()是当前执行node命令时候的文件夹地址
     //设置编辑
     form.encoding = 'utf-8';
     //设置文件存储路径
-    form.uploadDir = process.cwd() + '/uploadFile/dataFile'; //保存文件上传路径
+    form.uploadDir = process.cwd() + '/uploadFile/picture'; //保存文件上传路径
     //保留后缀
     form.keepExtensions = true;
     //设置单文件大小限制    
@@ -67,6 +68,8 @@ exports.add = function(req, res, next) {
     //form.maxFields = 1000;  设置所以文件的大小总和
     form.parse(req, function(err, fields, files) {
         if (err) return res.redirect(303, '/error');
+        console.log(fields)
+        console.log(files)
         //文件上传时间戳
         var t = new Date().getTime();
         //生成随机数
@@ -83,8 +86,11 @@ exports.add = function(req, res, next) {
                 throw Error("改名失败");
             }
 
-
-
         })
+        res.json({'msg':'上传成功'})
     })
+
+    
+
+
 }
