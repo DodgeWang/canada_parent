@@ -7,7 +7,7 @@ var mysql = require('../../config/mysql');
  * @return {null}
  */
 exports.getList = function(callback) { 
-   var sqls = "SELECT * FROM tbl_indexClassification";
+   var sqls = "SELECT * FROM tbl_indexclassification";
    mysql.query({
         sql: sqls
     }, function(err, rows) {
@@ -32,7 +32,7 @@ exports.getList = function(callback) {
  */
 exports.add = function(name,callback) { 
    mysql.query({
-        sql: "INSERT INTO tbl_indexClassification (`name`) VALUES ( :name )",
+        sql: "INSERT INTO tbl_indexclassification (`name`) VALUES ( :name )",
         params  : {
            "name": name
         }
@@ -53,7 +53,7 @@ exports.add = function(name,callback) {
  */
 exports.revise = function(data,callback) { 
    mysql.query({
-        sql: "UPDATE tbl_indexClassification SET name = :name WHERE id = :id",
+        sql: "UPDATE tbl_indexclassification SET name = :name WHERE id = :id",
         params  : {
            "name": data.name,
            "id": data.id
