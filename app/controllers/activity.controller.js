@@ -53,7 +53,7 @@ exports.deleteData = function(req, res, next){
  * @return {null}     
  */
 exports.add = function(req, res, next) {
-    console.log(req)
+    // console.log(req)
     var form = new formidable.IncomingForm();
     // console.log(__dirname)  //__dirname值当前文件所在路径
     // console.log(process.cwd())  //process.cwd()是当前执行node命令时候的文件夹地址
@@ -85,7 +85,7 @@ exports.add = function(req, res, next) {
             if (err) {
                 throw Error("改名失败");
             }
-
+            
         })
         res.json({'msg':'上传成功'})
     })
