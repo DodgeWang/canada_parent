@@ -12,6 +12,7 @@ module.exports = function() {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(express.static('public'));
+    app.use('/uploadFile',express.static('uploadFile'));
     app.use(cookieParser('sessionCanadaIEdu'));
     app.use(session({
         secret: 'sessionCanadaIEdu',  //服务器端生成session的签名,与cookieParser中的一致

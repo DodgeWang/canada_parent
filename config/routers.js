@@ -2,7 +2,8 @@ var processData = require('../app/controllers/processData.controller');
 var user = require('../app/controllers/user.controller');
 var classification = require('../app/controllers/classification.controller');
 var administrators = require('../app/controllers/administrators.controller');
-var activity = require('../app/controllers/activity.controller')
+var activity = require('../app/controllers/activity.controller');
+var imgUpload = require('../app/controllers/imgUpload.controller');
 
 module.exports = function(app) {
 
@@ -80,5 +81,7 @@ module.exports = function(app) {
     app.get('/activity/delete',activity.deleteData); //根据ID删除活动
 
     app.post('/activity/add',activity.add); //添加活动
+
+    app.post('/imgUpload',imgUpload.upload); //添加活动
 
 }
