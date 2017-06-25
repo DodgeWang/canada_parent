@@ -5,7 +5,7 @@ var resUtil = require("../libs/resUtil");
 var config = require('../../config/env/statusConfig');
 
 /**
- * 上传活动详情
+ * 上传活动图片
  * @param  {object}   req  the request object
  * @param  {object}   res  the response object
  * @param  {Function} next the next func

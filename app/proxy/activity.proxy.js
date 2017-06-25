@@ -18,7 +18,7 @@ exports.getList = function(classifyId,page,size,callback) {
    }
    mysql.query({
         sql: sqls,
-        params  : {
+        params: {
            "classifyId": classifyId,
            "limit_Start": limit_Start,
            "size": size
@@ -47,8 +47,69 @@ exports.getList = function(classifyId,page,size,callback) {
 exports.deleteData = function(id,callback) { 
    mysql.query({
         sql: "DELETE FROM tbl_campusactivities WHERE id = :id",
-        params  : {
+        params: {
            "id": id,
+        }
+    }, function(err, rows) {
+        if (err) {
+            callback(err);
+        }
+
+        if (rows && rows.length > 0) {
+            callback(null);
+        } else {
+            callback(null);
+        }
+    })
+}
+
+
+
+/**
+ * 添加新活动  
+ * @param  {obj} data 活动信息
+ * @param  {Function} callback 回调函数
+ * @return {null}
+ */
+exports.add = function(data,callback) { 
+   mysql.query({
+        sql: "INSERT INTO tbl_campusactivities (imgpath,title,url,classifyId) VALUES (:imgpath,:title,:url,:classifyId)",
+        params: {
+           "imgpath": data.imgpath,
+           "title": data.title,
+           "url": data.url,
+           "classifyId": data.classifyId
+        }
+    }, function(err, rows) {
+        if (err) {
+            callback(err);
+        }
+
+        if (rows && rows.length > 0) {
+            callback(null);
+        } else {
+            callback(null);
+        }
+    })
+}
+
+
+
+/**
+ * 修改活动  
+ * @param  {obj} data 活动信息
+ * @param  {Function} callback 回调函数
+ * @return {null}
+ */
+exports.edit = function(data,callback) { 
+   mysql.query({
+        sql: "UPDATE tbl_campusactivities SET imgpath = :imgpath,title = :title,url = :url,classifyId = :classifyId WHERE id = :id",
+        params: {
+           "id": data.id,
+           "imgpath": data.imgpath,
+           "title": data.title,
+           "url": data.url,
+           "classifyId": data.classifyId
         }
     }, function(err, rows) {
         if (err) {

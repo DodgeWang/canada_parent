@@ -63,7 +63,7 @@
         <!-- 修改编辑框 -->
         <div id="editBox">
             <div class="formBox">
-                <ul>
+                <!-- <ul>
                 	<li style="display: none;">
                         <span class="formBoxTitle">ID：</span>
                         <input type="text" name="classifiId" class="formBoxText"/>
@@ -84,7 +84,37 @@
                     <li>
                         <button class="formBoxButton" id="formSubmit">确认</button>
                     </li>
-                </ul>
+                </ul> -->
+                <ul>
+                <li style="display: none;">
+                        <span class="formBoxTitle">ID：</span>
+                        <input type="text" name="activityId" class="formBoxText"/>
+                </li>
+                <li>
+                    <span class="formBoxTitle">标题：</span>
+                    <input type="text" name="title" class="formBoxText" />
+                </li>
+                <li>
+                    <span class="formBoxTitle">URL连接：</span>
+                    <input type="text" name="url" class="formBoxText" />
+                </li>
+                <li>
+                    <span class="formBoxTitle">活动类型：</span>
+                    <select id="classifyEdit" class="selectStyle" style="margin-left:10px;">
+                    </select>
+                </li>
+                <li style="height: auto; overflow: hidden;">
+                    <span class="formBoxTitle">封面图片：</span>
+                    <div class="imgUploadBox">
+                        <img src="../img/noimg.jpg" style="width:100px; height: 50px;" id="imageshow">
+                        <input type="file" name="file" class="formBoxText" id="imgfile"/>
+                        <input type="text" name="imgpath" style="display: block;" />
+                    </div> 
+                </li>
+                <li>
+                    <button class="formBoxButton" id="formSubmit">添加</button>
+                </li>
+            </ul>
             </div>
         </div>
         <!-- 遮罩 -->
@@ -92,6 +122,7 @@
 
     </div>
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/ajaxfileupload.js"></script>
     <script type="text/javascript" src="../js/activityManagement.js"></script>
 </body>
 

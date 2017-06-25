@@ -33,7 +33,6 @@ exports.getList = function(req, res, next) {
  */
 exports.add = function(req, res, next) {
 	if(!req.body.name) return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
-    console.log(req.body.name)
     classification.add(req.body.name,function(err) {
         if (err) {
             return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));

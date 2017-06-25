@@ -82,6 +82,8 @@ module.exports = function(app) {
 
     app.post('/activity/add',activity.add); //添加活动
 
-    app.post('/imgUpload',imgUpload.upload); //添加活动
+    app.post('/activity/edit',activity.edit); //修改活动
+
+    app.post('/imgUpload',imgUpload.upload); //上传图片
 
 }

@@ -43,7 +43,7 @@ $(function() {
             {
                 if(obj.status.code === 0){
                     $("#imageshow").attr("src",obj.data.path);
-                    $("#formBox input[name='filepath']").val(obj.data.path);
+                    $("#formBox input[name='imgpath']").val(obj.data.path);
                 }else{
                     alert(obj.status.msg)
                 }
@@ -59,5 +59,22 @@ $(function() {
 
 
 function ajaxFileUpload() {
-   
+   var data = {
+       title: $("#formBox input[name='title']").val(),
+       url: $("#formBox input[name='url']").val(),
+       imgpath: $("#formBox input[name='imgpath']").val(),
+       classifyId: $("#classifySele").val()
+   }
+   for(var i in data){
+      if(data[i] == '') return alert('请填写完整信息')
+   }
+   $.post("/activity/add",data,function(obj){
+    console.log(obj)
+       if(obj.status.code !== 0){
+                alert("添加失败,请重试！");
+            }else{
+                alert("添加成功！");
+                window.location.reload();
+        }
+   })
 }
