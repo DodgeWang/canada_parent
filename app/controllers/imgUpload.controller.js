@@ -3,6 +3,7 @@ var path = require('path');
 var formidable = require('formidable'); //文件上传
 var resUtil = require("../libs/resUtil");
 var config = require('../../config/env/statusConfig');
+var sysConfig = require('../../config/env/development');
 
 /**
  * 上传活动图片
@@ -45,14 +46,10 @@ exports.upload = function(req, res, next) {
                 throw Error("改名失败");
                 return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));
             }
-            var data={path:'uploadFile/picture/' + t + ran + extname};
+            var data={path:'http://'+sysConfig.server.ip+':'+sysConfig.server.port+'/uploadFile/picture/' + t + ran + extname};
             res.json(resUtil.generateRes(data, config.statusCode.STATUS_OK));
         })
 
         
     })
-
-    
-
-
 }
