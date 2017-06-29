@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
 --
 -- Host: 127.0.0.1    Database: canada
 -- ------------------------------------------------------
--- Server version	5.7.18-log
+-- Server version	5.7.18
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +29,7 @@ CREATE TABLE `tbl_campusactivities` (
   `url` varchar(255) NOT NULL,
   `classifyId` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `tbl_campusactivities` (
 
 LOCK TABLES `tbl_campusactivities` WRITE;
 /*!40000 ALTER TABLE `tbl_campusactivities` DISABLE KEYS */;
+INSERT INTO `tbl_campusactivities` VALUES (2,'https://www.baidu.com/img/bd_logo1.png','3343','43434',1),(3,'https://www.baidu.com/img/bd_logo1.png','53245325','534253245',2),(7,'uploadFile/picture/149844491875218407.png','eeee','gggg',3),(8,'http://192.168.1.69:3000/uploadFile/picture/149844613705010626.png','活动测试','www.baidu.com',6);
 /*!40000 ALTER TABLE `tbl_campusactivities` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-15 22:18:47
+-- Dump completed on 2017-06-29 16:52:24

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
 --
 -- Host: 127.0.0.1    Database: canada
 -- ------------------------------------------------------
--- Server version	5.7.18-log
+-- Server version	5.7.18
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +31,7 @@ CREATE TABLE `tbl_lesson` (
   `end_time` time NOT NULL,
   `weekly` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `tbl_lesson` (
 
 LOCK TABLES `tbl_lesson` WRITE;
 /*!40000 ALTER TABLE `tbl_lesson` DISABLE KEYS */;
-INSERT INTO `tbl_lesson` VALUES (1,'12','1993-01-02','1993-02-08','00:00:12','13:03:25','1,2,3');
+INSERT INTO `tbl_lesson` VALUES (1,'001','2017-07-01','2017-08-01','09:30:00','11:30:00','1,2,3,4'),(2,'002','2017-07-05','2017-09-12','14:30:00','16:00:00','3,4,5'),(3,'003','2017-07-10','2017-08-01','16:00:00','17:30:00','1,3,4');
 /*!40000 ALTER TABLE `tbl_lesson` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-15 22:18:47
+-- Dump completed on 2017-06-29 16:52:25

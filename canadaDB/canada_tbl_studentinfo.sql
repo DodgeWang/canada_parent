@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
 --
 -- Host: 127.0.0.1    Database: canada
 -- ------------------------------------------------------
--- Server version	5.7.18-log
+-- Server version	5.7.18
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -24,9 +24,9 @@ DROP TABLE IF EXISTS `tbl_studentinfo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_studentinfo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `surname` varchar(45) NULL,
-  `given_name` varchar(45) NULL,
-  `student_num` varchar(255) NULL,
+  `surname` varchar(45) DEFAULT NULL,
+  `given_name` varchar(45) DEFAULT NULL,
+  `student_num` varchar(255) DEFAULT NULL,
   `grade` varchar(255) DEFAULT NULL,
   `gender` enum('boy','girl') DEFAULT NULL,
   `birthday` date DEFAULT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE `tbl_studentinfo` (
   `father_first` varchar(45) DEFAULT NULL,
   `mother_last` varchar(45) DEFAULT NULL,
   `mother_first` varchar(45) DEFAULT NULL,
-  `oen_num` varchar(255) NULL,
+  `oen_num` varchar(255) DEFAULT NULL,
   `advisory_group` varchar(60) DEFAULT NULL,
   `p1` varchar(45) DEFAULT NULL,
   `p1_name` varchar(60) DEFAULT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE `tbl_studentinfo` (
   `p3_late` int(11) DEFAULT NULL,
   `accumulated_credit` float(8,2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,6 +62,7 @@ CREATE TABLE `tbl_studentinfo` (
 
 LOCK TABLES `tbl_studentinfo` WRITE;
 /*!40000 ALTER TABLE `tbl_studentinfo` DISABLE KEYS */;
+INSERT INTO `tbl_studentinfo` VALUES (8,'Wang','ZiLin','000001','幼儿园','boy','2017-02-22','Wang','DaiQiang','Pan','ZhangPin','201702225016','Albert Gro','001','语文课',99.00,2,3,'002','数学课',96.50,0,1,'003','英语课',100.00,1,2,50.00);
 /*!40000 ALTER TABLE `tbl_studentinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -74,4 +75,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-15 22:18:47
+-- Dump completed on 2017-06-29 16:52:25
