@@ -4,6 +4,7 @@ var classification = require('../app/controllers/classification.controller');
 var administrators = require('../app/controllers/administrators.controller');
 var activity = require('../app/controllers/activity.controller');
 var imgUpload = require('../app/controllers/imgUpload.controller');
+var lesson = require('../app/controllers/lesson.controller');
 
 module.exports = function(app) {
 
@@ -49,6 +50,10 @@ module.exports = function(app) {
     app.get('/addClassification', function(req, res) {
         res.sendfile('public/tpls/addClassification.html')
     });
+    //课程页面
+    app.get('/lessonManage', function(req, res) {
+        res.sendfile('public/tpls/lessonManage.html')
+    });
     
 
 
@@ -85,5 +90,9 @@ module.exports = function(app) {
     app.post('/activity/edit',activity.edit); //修改活动
 
     app.post('/imgUpload',imgUpload.upload); //上传图片
+
+    app.get('/lesson/list',lesson.list);  //获取课程列表
+
+    app.post('/lesson/edit',lesson.edit);  //修改课程信息
 
 }
