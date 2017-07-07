@@ -20,7 +20,7 @@
                         <th>课程</th>
                         <th>上课日期</th>
                         <th>上课时间</th>
-                        <th>每周</th>
+                        <th>周天</th>
                         <th>操作</th>
                     </tr>
                 </thead>
@@ -35,24 +35,35 @@
                 <ul>
                 	<li style="display: none;">
                         <span class="formBoxTitle">ID：</span>
-                        <input type="text" name="classifiId" class="formBoxText"/>
+                        <input type="text" id="lessonId" class="formBoxText"/>
                     </li>
                     <li>
                         <span class="formBoxTitle">开始日期：</span>
-                        <!-- <input type="text" name="name" class="formBoxText" /> -->
-                        <input type="time" id="mytime">
+                        <input type="date" id="startDate" class="formBoxText">
                     </li>
                     <li>
                         <span class="formBoxTitle">结束日期：</span>
-                        <input type="text" name="name" class="formBoxText" />
+                        <input type="date" id="endDate" class="formBoxText">
                     </li>
                     <li>
                         <span class="formBoxTitle">开始时间：</span>
-                        <input type="text" name="name" class="formBoxText" />
+                        <input type="time" id="startTime" class="formBoxText">
                     </li>
                     <li>
                         <span class="formBoxTitle">结束时间：</span>
-                        <input type="text" name="name" class="formBoxText" />
+                        <input type="time" id="endTime" class="formBoxText">
+                    </li>
+                    <li style="height:auto; overflow:hidden;">
+                        <span class="formBoxTitle">课程周天：</span>
+                        <div class="checkList">
+                            <input type="checkbox" name="weekly" value="1"><span>周一<span>
+                            <input type="checkbox" name="weekly" value="2"><span>周二<span>
+                            <input type="checkbox" name="weekly" value="3"><span>周三<span>
+                            <input type="checkbox" name="weekly" value="4"><span>周四<span>
+                            <input type="checkbox" name="weekly" value="5"><span>周五<span>
+                            <input type="checkbox" name="weekly" value="6"><span>周六<span>
+                            <input type="checkbox" name="weekly" value="7"><span>周七<span>
+                        </div>
                     </li>
                     <li>
                         <button class="formBoxButton" id="formSubmit">确认</button>

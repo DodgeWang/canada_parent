@@ -190,3 +190,13 @@
     font-family: 'microsoft yahei';
     line-height: 30px;
 }
+
+.checkList{
+    width:180px;
+    margin-left: 10px;
+    float: left;
+}
+
+.checkList span{
+    font-size: 13px;
+}

@@ -34,6 +34,7 @@ exports.list = function(req, res, next) {
  * @return {null}     
  */
 exports.edit = function(req, res, next) {
+    console.log(req.body)
 	var param = ['id','startDate','endDate','startTime','endTime','weekly'];
 	for(var i = 0; i<param.length; i++){
        if(!req.body.hasOwnProperty(param[i])){
@@ -58,5 +59,5 @@ function dateStr(date){
     var year = date.getFullYear();
     var month = (date.getMonth()+1) < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1;
     var date = date.getDate() < 10 ? '0'+date.getDate() : date.getDate();
-    return year+'/'+month+'/'+date;
+    return year+'-'+month+'-'+date;
 }
