@@ -3,7 +3,7 @@ var path = require('path');
 var formidable = require('formidable'); //文件上传
 // var parsingTxtFiles = require('../func/parsingTxtFiles.js') //解析上传的txt文件
 var processData = require('../proxy/processData.proxy.js')
-var resUtil  = require("../libs/resUtil");
+var resUtil = require("../libs/resUtil");
 var config = require('../../config/env/statusConfig');
 
 
@@ -67,45 +67,29 @@ exports.importData = function(req, res, next) {
                     console.error(err);
                     return;
                 }
-                console.log(data)
                 var Infolist = data.split("\r\n");
                 var excellist = [];
-                var nameList = Infolist[0].split(/\t/);
-                console.log(nameList.join(','))
-                // for (var i = 1; i < Infolist.length - 1; i++) {
-                //     var obj = {};
-                //     var dataList = Infolist[i].split(/\t/);
-                //     for (var s = 0; s < dataList.length; s++) {
-                //         obj[nameList[s]] = dataList[s];
-                //     }
-                //     excellist.push(obj)
-                // }
-                for (var i = 1; i < Infolist.length - 1; i++) {
+                for (var i = 0; i < Infolist.length - 1; i++) {
                     var dataList = Infolist[i].split(/\t/);
                     excellist.push(dataList)
                 }
                 //存入数据库
-                console.log(excellist)
-                // console.log(fields.fileType)
-                processData.importData(excellist,function(err,rows){
-                	if (err) {
-                       return res.send("123");
+                processData.importData(excellist, function(err, rows) {
+                    if (err) {
+                        return res.json(resUtil.generateRes(null, {
+                            code: 4,
+                            msg: '导入数据格式错误'
+                        }));
                     }
-                	console.log("王代强：",rows)
+                    return res.json(resUtil.generateRes(null, config.statusCode.STATUS_OK));
                 })
-               
 
-                
+
+
             });
 
-
-            res.writeHead(200, { 'content-type': 'text/plain' });
-            res.end("成功");
         });
     });
 
 
 }
-
-
-

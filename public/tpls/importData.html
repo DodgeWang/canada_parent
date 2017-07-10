@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" href="../css/common.css" />
-	</head>
-	<body>
-		<div class="contentbox-title"><p>数据导入</p></div>
-		<div class="contentbox">
-			<form action="/fileuploads" method="POST" enctype="multipart/form-data">
-            <ul>
-            	<li>
-            		<span>选择文件类型：</span>
-            		<select name="fileType">
-            			<option value="course">课程</option>
-            			<option value="mark">成绩</option>
-            		</select>
-            	</li>
-                <li><span>打开上传文件：</span><input type="file" name="file"></li>
-                <li><input type="submit" value="上传"></li>
-            </ul>
-            </form>
-		<div>
-	</body>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/common.css" />
+</head>
+
+<body>
+    <div class="contentbox-title">
+        <p>数据导入</p>
+    </div>
+    
+    <div class="contentbox">
+        <ul>
+            <li><span>打开上传文件：</span>
+                <input type="file" name="file" id="dataFile">
+            </li>
+            <li>
+                <input type="submit" value="上传" id="sub-btn">
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/ajaxfileupload.js"></script>
+    <script type="text/javascript" src="../js/importData.js"></script>
+</body>
+
 </html>
