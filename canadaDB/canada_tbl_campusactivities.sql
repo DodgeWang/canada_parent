@@ -29,7 +29,7 @@ CREATE TABLE `tbl_campusactivities` (
   `url` varchar(255) NOT NULL,
   `classifyId` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `tbl_campusactivities` (
 
 LOCK TABLES `tbl_campusactivities` WRITE;
 /*!40000 ALTER TABLE `tbl_campusactivities` DISABLE KEYS */;
-INSERT INTO `tbl_campusactivities` VALUES (2,'https://www.baidu.com/img/bd_logo1.png','3343','43434',1),(3,'https://www.baidu.com/img/bd_logo1.png','53245325','534253245',2),(7,'uploadFile/picture/149844491875218407.png','eeee','gggg',3),(8,'http://192.168.1.69:3000/uploadFile/picture/149844613705010626.png','活动测试','www.baidu.com',6);
+INSERT INTO `tbl_campusactivities` VALUES (9,'http://192.168.1.69:2000/uploadFile/picture/149905178893316452.png','联系方式','https://www.baidu.com/',7),(10,'http://192.168.1.69:2000/uploadFile/picture/149905178893316452.png','学院地址','https://www.baidu.com/',7),(11,'http://192.168.1.69:2000/uploadFile/picture/149905178893316452.png','官方网站','https://www.baidu.com/',7),(12,'http://192.168.1.69:2000/uploadFile/picture/149941543392111903.jpg','活动1','https://www.baidu.com/',2),(13,'http://192.168.1.69:2000/uploadFile/picture/149941547323716193.jpg','活动2','https://www.baidu.com/',1),(14,'http://192.168.1.69:2000/uploadFile/picture/149941550445815132.jpg','活动3','https://www.baidu.com/',1),(15,'http://192.168.1.69:2000/uploadFile/picture/149941553503911138.jpg','活动4','https://www.baidu.com/',1),(16,'http://192.168.1.69:2000/uploadFile/picture/149941555087511723.jpg','活动5','https://www.baidu.com/',1);
 /*!40000 ALTER TABLE `tbl_campusactivities` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-29 16:52:24
+-- Dump completed on 2017-07-11 17:13:56

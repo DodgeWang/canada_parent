@@ -73,6 +73,8 @@ module.exports = function(app) {
 
     app.get('/user/list',user.getList); //获取用户列表
 
+    app.get('/user/updateUser',user.updateUser); //更新用户
+
     app.post('/user/resetPassword',user.resetPassword);  //重置用户密码
 
     app.get('/classification/list',classification.getList);  //获取图文分类列表

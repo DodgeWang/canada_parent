@@ -55,6 +55,21 @@ $(function() {
             }
         })
     }
+
+
+
+
+    //更新用户
+    $("#updateUser").click(function(){
+        $.get("/user/updateUser",{}, function(obj) {
+            if (obj.status.code !== 0) {
+                alert(obj.status.msg);
+            } else {
+                userList(1, size, 0);
+                alert('更新用户成功！');
+            }
+        })
+    })
 })
 
 
@@ -71,3 +86,6 @@ function resetPass(id) {
         })
     }
 }
+
+
+

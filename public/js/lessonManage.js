@@ -54,6 +54,9 @@ function edit(data) {
     $("#endTime").val(data.end_time);
     var weekly = data.weekly.split(",");
     var weekCheck = $("input[name='weekly']");
+    for(var i = 0; i<weekCheck.length; i++){
+        weekCheck[i].removeAttribute("checked");
+    }
     for (var i = 0; i < weekly.length; i++) {
         var num = Number(weekly[i]) - 1;
         weekCheck[num].setAttribute("checked", 'true');
@@ -81,5 +84,6 @@ function subData() {
         if (obj[k].checked) weeklyArr.push(obj[k].value);
     }
     data.weekly = weeklyArr.toString()
+
     return data;
 }

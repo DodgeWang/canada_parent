@@ -54,3 +54,31 @@ exports.resetPassword = function(userId,callback) {
         callback(null);
     })
 }
+
+
+
+
+/**
+ * 导入用户
+ * @param  {Array}   data   要导入的用户信息     
+ * @param  {Function} callback 回调函数
+ * @return {null}
+ */
+exports.importUser = function(data,callback) {
+  console.log(data+'\n')
+   mysql.query({
+        sql: "INSERT INTO tbl_user(username,password,studentNum) SELECT :username,:password,:studentNum FROM DUAL WHERE NOT EXISTS (SELECT * FROM tbl_user WHERE username = :username); ",
+        params: {
+           "username": data.surname+data.given_name+data.student_num,
+           "password": encryption.md5('123456',32),
+           "studentNum": data.student_num
+        }
+    }, function(err, rows) {
+        if (err) {
+            callback(err);
+        }
+        callback(null);
+    })
+}
+
+

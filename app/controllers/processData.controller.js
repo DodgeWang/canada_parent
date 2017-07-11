@@ -2,7 +2,8 @@ var fs = require('fs');
 var path = require('path');
 var formidable = require('formidable'); //文件上传
 // var parsingTxtFiles = require('../func/parsingTxtFiles.js') //解析上传的txt文件
-var processData = require('../proxy/processData.proxy.js')
+var processData = require('../proxy/processData.proxy.js');
+var user = require('../proxy/user.proxy.js')
 var resUtil = require("../libs/resUtil");
 var config = require('../../config/env/statusConfig');
 
@@ -81,6 +82,7 @@ exports.importData = function(req, res, next) {
                             msg: '导入数据格式错误'
                         }));
                     }
+                    
                     return res.json(resUtil.generateRes(null, config.statusCode.STATUS_OK));
                 })
 
