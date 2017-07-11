@@ -6,11 +6,13 @@ $(function() {
             if(obj.data.length>0){
                for(var i=0;i<obj.data.length;i++){
                	  var name = obj.data[i].name;
+                  var homeShow = (obj.data[i].homeshow===1?"<span style='color:green'>YES</span>":"<span style='color:red'>NO</span>")
                	  var nameStr = '"'+name+'"';
                	  var id = obj.data[i].id;
                	  var htmlStr = "<tr>\
                       <td>"+(i+1)+"</td>\
                       <td>"+name+"</td>\
+                      <td>"+homeShow+"</td>\
                       <td>\
                         <button class='green_button' onclick='edit("+id+","+nameStr+")'>修改</button>\
                       </td>\

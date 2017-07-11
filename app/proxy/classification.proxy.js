@@ -32,7 +32,7 @@ exports.getList = function(callback) {
  */
 exports.add = function(name,callback) { 
    mysql.query({
-        sql: "INSERT INTO tbl_indexclassification (`name`) VALUES ( :name )",
+        sql: "INSERT INTO tbl_indexclassification (name,homeshow) VALUES ( :name, 1)",
         params  : {
            "name": name
         }
