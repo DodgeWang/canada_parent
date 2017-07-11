@@ -28,7 +28,7 @@ CREATE TABLE `tbl_user` (
   `password` varchar(255) NOT NULL,
   `studentNum` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `tbl_user` (
 
 LOCK TABLES `tbl_user` WRITE;
 /*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
-INSERT INTO `tbl_user` VALUES (22,'WangDaiQiang','e10adc3949ba59abbe56e057f20f883e','000001'),(40,'BaiXuesong1013','e10adc3949ba59abbe56e057f20f883e','1013'),(41,'BaoTianheng1006','e10adc3949ba59abbe56e057f20f883e','1006'),(42,'BaiXindi904','e10adc3949ba59abbe56e057f20f883e','904'),(43,'AnYinuo0','e10adc3949ba59abbe56e057f20f883e','0'),(44,'WangZiLin000001','e10adc3949ba59abbe56e057f20f883e','000001');
+INSERT INTO `tbl_user` VALUES (22,'WangDaiQiang','e10adc3949ba59abbe56e057f20f883e','000001'),(40,'BaiXuesong1013','e10adc3949ba59abbe56e057f20f883e','1013'),(41,'BaoTianheng1006','e10adc3949ba59abbe56e057f20f883e','1006'),(42,'BaiXindi904','e10adc3949ba59abbe56e057f20f883e','904'),(43,'AnYinuo0','e10adc3949ba59abbe56e057f20f883e','0'),(44,'WangZiLin000001','e10adc3949ba59abbe56e057f20f883e','000001'),(45,'BaiHaha904','e10adc3949ba59abbe56e057f20f883e','904');
 /*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-11 17:13:56
+-- Dump completed on 2017-07-11 17:56:46

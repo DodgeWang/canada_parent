@@ -36,7 +36,7 @@ CREATE TABLE `tbl_administrators` (
 
 LOCK TABLES `tbl_administrators` WRITE;
 /*!40000 ALTER TABLE `tbl_administrators` DISABLE KEYS */;
-INSERT INTO `tbl_administrators` VALUES (1,'admin','670b14728ad9902aecba32e22fa4f6bd');
+INSERT INTO `tbl_administrators` VALUES (1,'admin','96e79218965eb72c92a549dd5a330112');
 /*!40000 ALTER TABLE `tbl_administrators` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-11 17:13:57
+-- Dump completed on 2017-07-11 17:56:46

@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `tbl_indexclassification`;
 CREATE TABLE `tbl_indexclassification` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
+  `homeshow` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -35,7 +36,7 @@ CREATE TABLE `tbl_indexclassification` (
 
 LOCK TABLES `tbl_indexclassification` WRITE;
 /*!40000 ALTER TABLE `tbl_indexclassification` DISABLE KEYS */;
-INSERT INTO `tbl_indexclassification` VALUES (1,'校园活动'),(2,'社区活动'),(7,'学院信息');
+INSERT INTO `tbl_indexclassification` VALUES (1,'校园活动',1),(2,'社区活动',0),(7,'学院信息',1);
 /*!40000 ALTER TABLE `tbl_indexclassification` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-11 17:13:57
+-- Dump completed on 2017-07-11 17:56:46
