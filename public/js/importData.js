@@ -1,5 +1,5 @@
 $(function(){
-	$("#sub-btn").click(function(){
+	$("#formSubmit").click(function(){
 		 var filepath = $("#dataFile").val();
          var extStart = filepath.lastIndexOf(".");
          var ext = filepath.substring(extStart, filepath.length).toUpperCase();

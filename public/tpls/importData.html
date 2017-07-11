@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
@@ -13,14 +14,18 @@
     </div>
     
     <div class="contentbox">
-        <ul>
-            <li><span>打开上传文件：</span>
-                <input type="file" name="file" id="dataFile">
-            </li>
-            <li>
-                <input type="submit" value="上传" id="sub-btn">
-            </li>
-        </ul>
+        <div class="formBox">
+            <ul>
+                <li>
+                    <span class="formBoxTitle">文件选择：</span>
+                    <input type="file" name="file" id="dataFile" class="formBoxText" style="border:0px">
+                </li>
+                
+                <li>
+                    <button class="formBoxButton" id="formSubmit">上传</button>
+                </li>
+            </ul>
+        </div>
     </div>
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../js/ajaxfileupload.js"></script>
