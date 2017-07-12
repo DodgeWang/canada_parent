@@ -65,7 +65,6 @@ exports.resetPassword = function(userId,callback) {
  * @return {null}
  */
 exports.importUser = function(data,callback) {
-  console.log(data+'\n')
    mysql.query({
         sql: "INSERT INTO tbl_user(username,password,studentNum) SELECT :username,:password,:studentNum FROM DUAL WHERE NOT EXISTS (SELECT * FROM tbl_user WHERE username = :username); ",
         params: {
