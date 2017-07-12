@@ -51,10 +51,11 @@ exports.add = function(req, res, next) {
  * @return {null}     
  */
 exports.revise = function(req, res, next) {
-	if(!req.body.id || !req.body.name) return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
+	if(!req.body.id || !req.body.name  || !req.body.homeshow) return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
 	var data = {
 		id:parseInt(req.body.id),
-		name:req.body.name
+		name:req.body.name,
+        homeshow:req.body.homeshow
 	}
     classification.revise(data,function(err) {
         if (err) {

@@ -53,10 +53,11 @@ exports.add = function(name,callback) {
  */
 exports.revise = function(data,callback) { 
    mysql.query({
-        sql: "UPDATE tbl_indexclassification SET name = :name WHERE id = :id",
+        sql: "UPDATE tbl_indexclassification SET name = :name,homeshow = :homeshow WHERE id = :id",
         params  : {
            "name": data.name,
-           "id": data.id
+           "id": data.id,
+           "homeshow": data.homeshow
         }
     }, function(err, rows) {
         if (err) {

@@ -221,3 +221,14 @@
     line-height: 20px;
 
 }
+
+.radioList{
+    width:180px;
+    margin-left: 20px;
+    float: left;
+    height: 30px;
+    padding: 5px 0;
+}
+.radioList span{
+    font-size: 13px;
+}
