@@ -16,28 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tbl_administrators`
+-- Table structure for table `tbl_banner`
 --
 
-DROP TABLE IF EXISTS `tbl_administrators`;
+DROP TABLE IF EXISTS `tbl_banner`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_administrators` (
+CREATE TABLE `tbl_banner` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `path` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_administrators`
+-- Dumping data for table `tbl_banner`
 --
 
-LOCK TABLES `tbl_administrators` WRITE;
-/*!40000 ALTER TABLE `tbl_administrators` DISABLE KEYS */;
-INSERT INTO `tbl_administrators` VALUES (1,'admin','96e79218965eb72c92a549dd5a330112');
-/*!40000 ALTER TABLE `tbl_administrators` ENABLE KEYS */;
+LOCK TABLES `tbl_banner` WRITE;
+/*!40000 ALTER TABLE `tbl_banner` DISABLE KEYS */;
+INSERT INTO `tbl_banner` VALUES (10,'http://192.168.1.69:2000/uploadFile/banner/149993176158710472.jpg');
+/*!40000 ALTER TABLE `tbl_banner` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-13 16:17:41
+-- Dump completed on 2017-07-13 16:17:40
