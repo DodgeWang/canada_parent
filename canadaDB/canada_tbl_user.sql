@@ -27,8 +27,9 @@ CREATE TABLE `tbl_user` (
   `username` varchar(60) NOT NULL,
   `password` varchar(255) NOT NULL,
   `studentNum` varchar(255) NOT NULL,
+  `createtime` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +38,7 @@ CREATE TABLE `tbl_user` (
 
 LOCK TABLES `tbl_user` WRITE;
 /*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
-INSERT INTO `tbl_user` VALUES (22,'WangDaiQiang','96e79218965eb72c92a549dd5a330112','000001'),(40,'BaiXuesong1013','e10adc3949ba59abbe56e057f20f883e','1013'),(41,'BaoTianheng1006','e10adc3949ba59abbe56e057f20f883e','1006'),(42,'BaiXindi904','e10adc3949ba59abbe56e057f20f883e','904'),(43,'AnYinuo0','e10adc3949ba59abbe56e057f20f883e','0'),(44,'WangZiLin000001','e10adc3949ba59abbe56e057f20f883e','000001'),(45,'BaiHaha904','e10adc3949ba59abbe56e057f20f883e','904'),(46,'xxYinuo0','e10adc3949ba59abbe56e057f20f883e','0');
+INSERT INTO `tbl_user` VALUES (22,'WangDaiQiang','96e79218965eb72c92a549dd5a330112','000001',NULL),(59,'li4Tianheng1006','e10adc3949ba59abbe56e057f20f883e','1006','2017-07-13'),(60,'dangXuesong1013','e10adc3949ba59abbe56e057f20f883e','1013','2017-07-13'),(61,'wang2Haha904','e10adc3949ba59abbe56e057f20f883e','904','2017-07-13'),(62,'pang4Yinuo0','e10adc3949ba59abbe56e057f20f883e','0','2017-07-13'),(63,'wang1Haha904','e10adc3949ba59abbe56e057f20f883e','904','2017-07-13'),(64,'pang3Yinuo0','e10adc3949ba59abbe56e057f20f883e','0','2017-07-13'),(65,'liTianheng1006','e10adc3949ba59abbe56e057f20f883e','1006','2017-07-13'),(66,'wangHaha904','e10adc3949ba59abbe56e057f20f883e','904','2017-07-13'),(67,'pang1Yinuo0','e10adc3949ba59abbe56e057f20f883e','0','2017-07-13'),(68,'pangYinuo0','e10adc3949ba59abbe56e057f20f883e','0','2017-07-13'),(69,'panYinuo0','e10adc3949ba59abbe56e057f20f883e','0','2017-07-13'),(70,'BaoTianheng1006','e10adc3949ba59abbe56e057f20f883e','1006','2017-07-13'),(71,'BaiXuesong1013','e10adc3949ba59abbe56e057f20f883e','1013','2017-07-13');
 /*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-13 16:17:41
+-- Dump completed on 2017-07-13 18:34:45
