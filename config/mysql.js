@@ -1,34 +1,3 @@
-// var mysql = require('mysql');
-
-// var config = require('./config');
-
-
-// module.exports = function(callback) {
-//     var connection = mysql.createConnection(config.database);
-//     connection.connect(function(err) {
-//         if (err) {
-//             console.error('error connecting: ' + err.stack);
-//             return;
-//         }
-
-//         console.log('connected as id ' + connection.threadId);
-//     });
-
-//     //查询
-//     connection.query("select * from tbl_user", function(err, rows, fields) {
-//         if (err) throw err;
-//         // console.log('The solution is:', rows);
-//         // return rows;
-//         callback(rows)
-//     })
-
-//     //关闭连接
-//     connection.end()
-//     return connection;
-
-// }
-
-
 
 var mysql = require('mysql');
 var config = require('./config');

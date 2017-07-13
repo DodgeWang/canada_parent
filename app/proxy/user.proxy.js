@@ -66,7 +66,6 @@ exports.resetPassword = function(userId,callback) {
  * @return {null}
  */
 exports.importUser = function(data,createTime,callback) {
-  console.log(data.passwordstr)
    mysql.query({
         sql: "INSERT INTO tbl_user(username,password,studentNum,createtime) SELECT :username,:password,:studentNum,:createtime FROM DUAL WHERE NOT EXISTS (SELECT * FROM tbl_user WHERE username = :username); ",
         params: {
@@ -97,7 +96,6 @@ exports.newList = function(createtime,callback) {
            "createtime": createtime
         }
     }, function(err, rows) {
-      console.log("hshhsfhdsf:",rows)
         if (err) {
             callback(err, null);
         }
