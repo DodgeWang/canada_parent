@@ -37,19 +37,19 @@ jQuery.extend({
         var form = $('<form  action="" method="POST" name="' + formId + '" id="' + formId + '" enctype="multipart/form-data"></form>');
 
         /*解决一次只能上传单张问题 修改前*/
-        // var oldElement = $('#' + fileElementId);
-        // var newElement = $(oldElement).clone();
-        // $(oldElement).attr('id', fileId);
-        // $(oldElement).before(newElement);
-        // $(oldElement).appendTo(form);
+        var oldElement = $('#' + fileElementId);
+        var newElement = $(oldElement).clone();
+        $(oldElement).attr('id', fileId);
+        $(oldElement).before(newElement);
+        $(oldElement).appendTo(form);
 
         /*修改后*/
-        var oldElement = jQuery('#' + fileElementId);  
-        var newElement = oldElement.clone(true);  
-        newElement[0].files=oldElement[0].files;  
-        oldElement.attr('id', fileId);  
-        oldElement.before(newElement);  
-        oldElement.appendTo(form);  
+        // var oldElement = jQuery('#' + fileElementId);  
+        // var newElement = oldElement.clone(true);  
+        // newElement[0].files=oldElement[0].files;  
+        // oldElement.attr('id', fileId);  
+        // oldElement.before(newElement);  
+        // oldElement.appendTo(form);  
 
 
         //set attributes

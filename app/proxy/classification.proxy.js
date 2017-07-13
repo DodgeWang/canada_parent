@@ -38,7 +38,7 @@ exports.add = function(name,callback) {
         }
     }, function(err, rows) {
         if (err) {
-            callback(new ServerError());
+            callback(err);
         }
         callback(null);
     })

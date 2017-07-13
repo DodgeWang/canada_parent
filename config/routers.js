@@ -5,6 +5,7 @@ var administrators = require('../app/controllers/administrators.controller');
 var activity = require('../app/controllers/activity.controller');
 var imgUpload = require('../app/controllers/imgUpload.controller');
 var lesson = require('../app/controllers/lesson.controller');
+var home = require('../app/controllers/home.controller');
 
 module.exports = function(app) {
 
@@ -54,6 +55,10 @@ module.exports = function(app) {
     app.get('/lessonManage', function(req, res) {
         res.sendfile('public/tpls/lessonManage.html')
     });
+    //首页图片管理
+    app.get('/homeImg', function(req, res) {
+        res.sendfile('public/tpls/homeImg.html')
+    });
     
 
 
@@ -96,5 +101,11 @@ module.exports = function(app) {
     app.get('/lesson/list',lesson.list);  //获取课程列表
 
     app.post('/lesson/edit',lesson.edit);  //修改课程信息
+
+    app.post('/bannerUpload',imgUpload.bannerUpload);  //上传首页图片
+
+    app.post('/home/bannerAdd',home.bannerAdd);  //修改首页图片
+
+    app.get('/home/getBanner',home.getBanner);   //获取首页图片
 
 }
