@@ -61,16 +61,19 @@ exports.resetPassword = function(userId,callback) {
 /**
  * 导入用户
  * @param  {Array}   data   要导入的用户信息     
+ * @param  {Array}   createTime   要导入的用户信息
  * @param  {Function} callback 回调函数
  * @return {null}
  */
-exports.importUser = function(data,callback) {
+exports.importUser = function(data,createTime,callback) {
+  console.log(data.passwordstr)
    mysql.query({
-        sql: "INSERT INTO tbl_user(username,password,studentNum) SELECT :username,:password,:studentNum FROM DUAL WHERE NOT EXISTS (SELECT * FROM tbl_user WHERE username = :username); ",
+        sql: "INSERT INTO tbl_user(username,password,studentNum,createtime) SELECT :username,:password,:studentNum,:createtime FROM DUAL WHERE NOT EXISTS (SELECT * FROM tbl_user WHERE username = :username); ",
         params: {
            "username": data.surname+data.given_name+data.student_num,
-           "password": encryption.md5('123456',32),
-           "studentNum": data.student_num
+           "password": encryption.md5(data.passwordstr,32),
+           "studentNum": data.student_num,
+           "createtime": createTime
         }
     }, function(err, rows) {
         if (err) {
@@ -79,5 +82,34 @@ exports.importUser = function(data,callback) {
         callback(null);
     })
 }
+
+
+/**
+ * 查询最新生成的用户列表
+ * @param  {number}   createtime   生成时间         
+ * @param  {Function} callback 回调函数
+ * @return {null}
+ */
+exports.newList = function(createtime,callback) {
+   mysql.query({
+        sql: "SELECT * FROM tbl_user WHERE createtime=:createtime",
+        params  : {
+           "createtime": createtime
+        }
+    }, function(err, rows) {
+      console.log("hshhsfhdsf:",rows)
+        if (err) {
+            callback(err, null);
+        }
+
+        if (rows && rows.length > 0) {
+
+            callback(null, rows);
+        } else {
+            callback(null, []);
+        }
+    })
+}
+
 
 

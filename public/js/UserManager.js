@@ -63,7 +63,7 @@ $(function() {
     $("#updateUser").click(function(){
         $.get("/user/updateUser",{}, function(obj) {
             if (obj.status.code !== 0) {
-                alert(obj.status.msg);
+                alert("更新失败");
             } else {
                 userList(1, size, 0);
                 alert('更新用户成功！');

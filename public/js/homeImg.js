@@ -53,17 +53,6 @@ $(function() {
 
 
 
-// function imgUpload() {
-
-//     // $('#imgfile').change(function(e) { //再次绑定
-
-//     //     imgUpload();
-
-//     // })
-
-//     // return false;
-// }
-
 
 
 
