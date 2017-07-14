@@ -92,7 +92,7 @@ exports.updateUser = function(req, res, next) {
                         }
                     }  
                 }
-                // console.log("this.data:", rows)
+                console.log("this.data:", rows)
 
                 if(rows.length>0){
                     var emailCont = "";

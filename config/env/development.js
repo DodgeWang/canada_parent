@@ -9,13 +9,13 @@ module.exports = {
         host: '127.0.0.1', //数据库地址
         port: 3306, //数据库端口号
         user: 'root', //数据库用户名
-        password: '123456', //密码
+        password: '000000', //密码
         database: 'canada' //数据库名
     },
     //邮件配置
     email: {
         server: "qq",   //服务
-        licenseCode: "nagbpvxpfvmgbifd", //授权码
+        licenseCode: "ywcpyhknfzsxcbae", //授权码
         sender: "453831794@qq.com", //发送者
         receiver: "2508700515@qq.com"  //接收者
 
