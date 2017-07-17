@@ -100,7 +100,7 @@ exports.updateUser = function(req, res, next) {
                         var itemDom = "<tr><td>"+rows[i].username+"</td><td>"+rows[i].password+"</td></tr>"
                         emailCont += itemDom;
                     }
-                    emailCont = "<table>"+emailCont+"</table>"
+                    emailCont = "<table><tr><th>账号</th><th>密码</th></tr>"+emailCont+"</table>"
                     sendEmail(emailCont);
                 }
 
@@ -147,10 +147,12 @@ function addNumber(_idx) {
 
 function sendEmail(content){
 var transporter = nodemailer.createTransport({  
-  service: devConfig.email.server,  
+  host: devConfig.email.server, 
+  // secureConnection: true,
+  port: devConfig.email.port,
   auth: {  
     user: devConfig.email.sender,  
-    pass: devConfig.email.licenseCode //授权码,通过QQ获取  
+    pass: devConfig.email.pass //授权码,通过QQ获取  
   
   }  
   });  
