@@ -35,12 +35,12 @@ exports.list = function(req, res, next) {
  */
 exports.edit = function(req, res, next) {
     console.log(req.body)
-	var param = ['id','startDate','endDate','startTime','endTime','weekly'];
-	for(var i = 0; i<param.length; i++){
-       if(!req.body.hasOwnProperty(param[i])){
-       	  return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
-       }; 
-	}
+	// var param = ['id','startDate','endDate','startTime','endTime','weekly'];
+	// for(var i = 0; i<param.length; i++){
+ //       if(!req.body.hasOwnProperty(param[i])){
+ //       	  return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
+ //       }; 
+	// }
     lesson.edit(req.body,function(err,rows) {
         if (err) {
             return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));

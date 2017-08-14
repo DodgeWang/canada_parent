@@ -44,6 +44,7 @@ exports.edit = function(obj,callback) {
            "weekly": obj.weekly
         }
     }, function(err, rows) {
+
         if (err) {
             callback(err, null);
         }
