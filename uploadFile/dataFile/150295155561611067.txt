@@ -1,0 +1,4 @@
+Guan	Yiwen	867	12	Female	23/08/1999	76642941	Zhanshe	Guan	Xiang	Li	Winnie Group	SPH4Ud	95	2	0	ENG4Uh	80.1	1	0	SCH4Uc	96	2	0	31
+Guo	Yifu	984	12	Male	23/08/1999	395761604	Wenxiang	Guo	Yanling	Yang	Minnie Group	SPH4Ud	86	4	0	ICS4Ud	88	2	0	ENG4Uj	71	3	0	32
+Han	Yuqian	935	12	Female	05/11/1999	481939346	Dinghu	Han	Xia	Wang	Albert Group	ENG4Uf	73.2	0	0	CGU4Ma	91.6	1	0	BBB4Mf	93	1	0	31
+Hao	Ziyu	766	12	Female	26/09/1999	874333586	Fengguang	Hao	Weiwei	Wang	Eric Group	ENG4Uf	72.7	0	0	BOH4Me	88.9	2	0	LKMDUe	90	0	0	33

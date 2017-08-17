@@ -2,7 +2,7 @@ var user = require('../proxy/user.proxy');
 var student = require('../proxy/student.proxy');
 var resUtil = require("../libs/resUtil");
 var config = require('../../config/env/statusConfig');
-var nodemailer = require('nodemailer'); 
+var nodemailer = require('nodemailer');
 var devConfig = require('../../config/config');
 
 
@@ -68,8 +68,8 @@ exports.updateUser = function(req, res, next) {
 
 
 
-       
-        for(var i=0;i< data.length;i++){
+
+        for (var i = 0; i < data.length; i++) {
             data[i].passwordstr = addNumber(6);
         }
         // console.log(data)
@@ -80,27 +80,26 @@ exports.updateUser = function(req, res, next) {
                 if (err) {
                     return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));
                 }
-                
+
                 outer:
-                for(var s=0;s<rows.length;s++){
-                    inter:
-                    for(var g=0;g<data.length;g++){
-                        var us = data[g].surname+data[g].given_name+data[g].student_num
-                        if(rows[s].username == us){
-                            rows[s].password = data[g].passwordstr;
-                            break inter;
+                    for (var s = 0; s < rows.length; s++) {
+                        inter: for (var g = 0; g < data.length; g++) {
+                            var us = data[g].surname + data[g].given_name + data[g].student_num
+                            if (rows[s].username == us) {
+                                rows[s].password = data[g].passwordstr;
+                                break inter;
+                            }
                         }
-                    }  
-                }
+                    }
                 console.log("this.data:", rows)
 
-                if(rows.length>0){
+                if (rows.length > 0) {
                     var emailCont = "";
-                    for (var i = 0;i<rows.length;i++){
-                        var itemDom = "<tr><td>"+rows[i].username+"</td><td>"+rows[i].password+"</td></tr>"
+                    for (var i = 0; i < rows.length; i++) {
+                        var itemDom = "<tr><td>" + rows[i].username + "</td><td>" + rows[i].password + "</td></tr>"
                         emailCont += itemDom;
                     }
-                    emailCont = "<table><tr><th>账号</th><th>密码</th></tr>"+emailCont+"</table>"
+                    emailCont = "<table><tr><th>账号</th><th>密码</th></tr>" + emailCont + "</table>"
                     sendEmail(emailCont);
                 }
 
@@ -145,31 +144,32 @@ function addNumber(_idx) {
 
 
 
-function sendEmail(content){
-var transporter = nodemailer.createTransport({  
-  host: devConfig.email.server, 
-  // secureConnection: true,
-  port: devConfig.email.port,
-  auth: {  
-    user: devConfig.email.sender,  
-    pass: devConfig.email.pass //授权码,通过QQ获取  
-  
-  }  
-  });  
-  var mailOptions = {  
-    from: devConfig.email.sender, // 发送者  
-    to: devConfig.email.receiver, // 接受者,可以同时发送多个,以逗号隔开  
-    subject: '新生成用户账号密码', // 标题  
-    // text: 'Hello world'// 文本  
-    html: content   
-  };  
-  
-  transporter.sendMail(mailOptions, function (err, info) {  
-    if (err) {  
-      console.log(err);  
-      return;  
-    }  
-  
-    console.log('发送成功');  
-  });  
-  } 
+function sendEmail(content) {
+    var transporter = nodemailer.createTransport({
+        host: devConfig.email.server,
+        // secureConnection: true,
+        port: devConfig.email.port,
+        auth: {
+            user: devConfig.email.sender,
+            pass: devConfig.email.pass //授权码,通过QQ获取  
+
+        }
+    });
+    var mailOptions = {
+        from: devConfig.email.sender, // 发送者  
+        to: devConfig.email.receiver, // 接受者,可以同时发送多个,以逗号隔开  
+        subject: '新生成用户账号密码', // 标题  
+        // text: 'Hello world'// 文本  
+        html: content
+    };
+
+    transporter.sendMail(mailOptions, function(err, info) {
+        console.log(info)
+        if (err) {
+            console.log(err);
+            return;
+        }
+
+        console.log('发送成功');
+    });
+}

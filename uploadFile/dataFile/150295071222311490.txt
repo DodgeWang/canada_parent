@@ -1,0 +1,4 @@
+﻿Guan	Yiwen	867	12	Female	23/08/1999	76642941	Zhanshe	Guan	Xiang	Li	Winnie Group	SPH4Ud	Physics, Grade 12	95	2	0	ENG4Uh	English 12, University Prep.	80.1	1	0	SCH4Uc	Chemistry, Grade 12	96	2	0	31
+Guo	Yifu	984	12	Male	23/08/1999	395761604	Wenxiang	Guo	Yanling	Yang	Minnie Group	SPH4Ud	Physics, Grade 12	86	4	0	ICS4Ud	Computer Science, Grade 12	88	2	0	ENG4Uj	English 12, University Prep.	71	3	0	32
+Han	Yuqian	935	12	Female	05/11/1999	481939346	Dinghu	Han	Xia	Wang	Albert Group	ENG4Uf	English 12, University Prep.	73.2	0	0	CGU4Ma	World Geography: Human Patterns and Interactions, Grade 12	91.6	1	0	BBB4Mf	International Business Fundamentals,Grade 12	93	1	0	31
+Hao	Ziyu	766	12	Female	26/09/1999	874333586	Fengguang	Hao	Weiwei	Wang	Eric Group	ENG4Uf	English 12, University Prep.	72.7	0	0	BOH4Me	Business Leadership: Management Fundamentals 12	88.9	2	0	LKMDUe	Mandarin, Grade 12	90	0	0	33

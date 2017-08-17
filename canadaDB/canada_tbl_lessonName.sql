@@ -16,30 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tbl_user`
+-- Table structure for table `tbl_lessonName`
 --
 
-DROP TABLE IF EXISTS `tbl_user`;
+DROP TABLE IF EXISTS `tbl_lessonName`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_user` (
+CREATE TABLE `tbl_lessonName` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(60) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `studentNum` varchar(255) NOT NULL,
-  `createtime` varchar(255) DEFAULT NULL,
+  `code` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=387 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_user`
+-- Dumping data for table `tbl_lessonName`
 --
 
-LOCK TABLES `tbl_user` WRITE;
-/*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
-INSERT INTO `tbl_user` VALUES (383,'HaoZiyu766','175e39d53d283ae2a3b0b591aff25fcc','766','1502954659'),(384,'HanYuqian935','07d57ba175504fd58573bb32b66bb7ec','935','1502954659'),(385,'GuoYifu984','db8f8f9e3bbe6929f5f38682accfe06e','984','1502954659'),(386,'GuanYiwen867','fbb24d9024b1087723de5fa07bb8a7a6','867','1502954659');
-/*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
+LOCK TABLES `tbl_lessonName` WRITE;
+/*!40000 ALTER TABLE `tbl_lessonName` DISABLE KEYS */;
+INSERT INTO `tbl_lessonName` VALUES (1,'ENG4Uf','test1'),(2,'SCH4Ub','test2'),(3,'SPH4Ud','Physics, Grade 12'),(4,'ENG4Ui','test5');
+/*!40000 ALTER TABLE `tbl_lessonName` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

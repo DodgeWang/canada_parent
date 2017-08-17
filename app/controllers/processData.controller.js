@@ -74,6 +74,7 @@ exports.importData = function(req, res, next) {
                     var dataList = Infolist[i].split(/\t/);
                     excellist.push(dataList)
                 }
+
                 //存入数据库
                 processData.importData(excellist, function(err, rows) {
                     if (err) {
