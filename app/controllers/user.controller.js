@@ -96,10 +96,10 @@ exports.updateUser = function(req, res, next) {
                 if (rows.length > 0) {
                     var emailCont = "";
                     for (var i = 0; i < rows.length; i++) {
-                        var itemDom = "<tr><td>" + rows[i].username + "</td><td>" + rows[i].password + "</td></tr>"
+                        var itemDom = "<tr><td style='padding:0 10px;'>" + rows[i].username + "</td><td style='padding:0 10px;'>" + rows[i].password + "</td></tr>"
                         emailCont += itemDom;
                     }
-                    emailCont = "<table><tr><th>账号</th><th>密码</th></tr>" + emailCont + "</table>"
+                    emailCont = "<table border='1'><tr><th>账号</th><th>密码</th></tr>" + emailCont + "</table>"
                     sendEmail(emailCont);
                 }
 
@@ -139,19 +139,14 @@ function addNumber(_idx) {
 }
 
 
-
-
-
-
-
 function sendEmail(content) {
     var transporter = nodemailer.createTransport({
         host: devConfig.email.server,
-        // secureConnection: true,
+        secureConnection: true,
         port: devConfig.email.port,
         auth: {
             user: devConfig.email.sender,
-            pass: devConfig.email.pass //授权码,通过QQ获取  
+            pass: devConfig.email.pass  
 
         }
     });
@@ -164,12 +159,14 @@ function sendEmail(content) {
     };
 
     transporter.sendMail(mailOptions, function(err, info) {
-        console.log(info)
         if (err) {
-            console.log(err);
-            return;
-        }
+            return console.log(err);
+        }else{  
+            console.log('Message sent: ' + info.message);
+            console.log('发送成功');  
+        }  
+        transporter.close(); // 如果没用，关闭连接池  
 
-        console.log('发送成功');
+
     });
 }

@@ -13,7 +13,7 @@ module.exports = {
         password: '000000', //密码
         database: 'canada' //数据库名
     },
-    //正式数据库配置
+    //测试正式数据库配置
     // database: {
     //     host: '69.42.59.67', //数据库
     //     port: 3306, //数据库端口号
@@ -21,19 +21,18 @@ module.exports = {
     //     password: 'Iedu3660', //密码
     //     database: 'new_iedu' //数据库名
     // },
-    //      邮件配置
+    // 邮件配置
     // email: {
     //     server: "qq",   //服务
     //     licenseCode: "ywcpyhknfzsxcbae", //授权码
     //     sender: "453831794@qq.com", //发送者
     //     receiver: "2508700515@qq.com"  //接收者
-
     // }
     
     email: {
         server: "smtp.office365.com",   //服务
         port: 587,
-        pass: "Noic3660", //授权码
+        pass: "Noic8829", //授权码
         sender: "itsupport@neworientalgroup.org", //发送者
         receiver: "453831794@qq.com"  //接收者
 
