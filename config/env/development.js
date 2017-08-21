@@ -2,8 +2,8 @@ module.exports = {
 	//服务器配置
     server: {
         port: 2000, //服务器端口号,
-        //ip: '192.168.1.69' //ip地址
-        ip: 'admin.ieduapp.com'
+        ip: '192.168.1.69' //ip地址
+        // ip: 'admin.ieduapp.com'
     },
     //测试数据库配置
     database: {
