@@ -53,7 +53,6 @@ exports.deleteData = function(req, res, next){
  * @return {null}     
  */
 exports.add = function(req, res, next) {
-    console.log(req.body)
    if(!req.body.title  || !req.body.imgpath || !req.body.url || !req.body.classifyId) return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
    var data = {
         title: req.body.title,

@@ -5,6 +5,7 @@ var administrators = require('../app/controllers/administrators.controller');
 var activity = require('../app/controllers/activity.controller');
 var imgUpload = require('../app/controllers/imgUpload.controller');
 var lesson = require('../app/controllers/lesson.controller');
+var lessonName = require('../app/controllers/lessonName.controller');
 var home = require('../app/controllers/home.controller');
 
 module.exports = function(app) {
@@ -54,6 +55,14 @@ module.exports = function(app) {
     //课程页面
     app.get('/lessonManage', function(req, res) {
         res.sendfile('public/tpls/lessonManage.html')
+    });
+    //课程名设置页面
+    app.get('/lessonNameList', function(req, res) {
+        res.sendfile('public/tpls/lessonNameList.html')
+    });
+    //添加课程名页面
+    app.get('/addLessonName', function(req, res) {
+        res.sendfile('public/tpls/addLessonName.html')
     });
     //首页图片管理
     app.get('/homeImg', function(req, res) {
@@ -107,5 +116,13 @@ module.exports = function(app) {
     app.post('/home/bannerAdd',home.bannerAdd);  //修改首页图片
 
     app.get('/home/getBanner',home.getBanner);   //获取首页图片
+
+    app.get('/lessonName/list',lessonName.list); //获取课程名列表
+
+    app.post('/lessonName/edit',lessonName.edit); //根据ID修改课程名 
+    
+    app.get('/lessonName/delete',lessonName.deleteData); //获取课程名列表
+    
+    app.post('/lessonName/add',lessonName.add); //添加课程名 
 
 }
