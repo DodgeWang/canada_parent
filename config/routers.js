@@ -87,6 +87,8 @@ module.exports = function(app) {
 
     app.get('/user/list',user.getList); //获取用户列表
 
+    app.get('/user/delete',user.deleteData); //根据ID删除
+
     app.get('/user/updateUser',user.updateUser); //更新用户
 
     app.post('/user/resetPassword',user.resetPassword);  //重置用户密码
@@ -125,4 +127,7 @@ module.exports = function(app) {
     
     app.post('/lessonName/add',lessonName.add); //添加课程名 
 
+    // app.get('/user/languageMark',user.getLanguageMark); //根据用户Id获取语言成绩
+
+    // app.post('/user/editMark',user.editMark); //修改语言成绩
 }

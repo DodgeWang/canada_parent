@@ -32,6 +32,58 @@ exports.getList = function(page,size,callback) {
 
 
 
+
+/**
+ * 根据用户Id获取语言成绩
+ * @param  {number}   userId   用户ID     
+ * @param  {Function} callback 回调函数
+ * @return {null}
+ */
+// exports.getLanguageMark = function(id,callback) {
+//    mysql.query({
+//         sql: "SELECT id,mark FROM tbl_languageLesson WHERE student_Id = :id order by id desc limit 0,1",
+//         params  : {
+//            "id": id
+//         }
+//     }, function(err, rows) {
+//         if (err) {
+//             callback(err, null);
+//         }
+
+//         if (rows && rows.length > 0) {
+//             callback(null, rows[0]);
+//         } else {
+//             callback(null, null);
+//         }
+//     })
+// }
+
+
+
+/**
+ * 根据指定id修改语言课成绩
+ * @param  {object}   data   修改信息    
+ * @param  {Function} callback 回调函数
+ * @return {null}
+ */
+// exports.editMark = function(data,callback) {
+//    mysql.query({
+//         sql: "insert into tbl_languageLesson(id,mark,p,student_Id) values (:id,:mark,'p4',:stuId) on duplicate key update mark=:mark,p='p4',student_Id=:stuId",
+//         params  : {
+//            "id": data.markId,
+//            "mark": data.mark,
+//            "stuId": data.userId
+//         }
+//     }, function(err) {
+//         if (err) {
+//             callback(err, null);
+//         }
+//         callback(null, null);
+//     })
+// }
+
+
+
 /**
  * 重置用户密码
  * @param  {number}   userId   用户ID     
@@ -51,6 +103,27 @@ exports.resetPassword = function(userId,callback) {
         if (err) {
             callback(err);
         }
+        callback(null);
+    })
+}
+
+/**
+ * 根据id删除用户
+ * @param  {number} id 用户ID
+ * @param  {Function} callback 回调函数
+ * @return {null}
+ */
+exports.deleteData = function(id,callback) { 
+   mysql.query({
+        sql: "DELETE tbl_user,tbl_studentinfo FROM tbl_user,tbl_studentinfo WHERE tbl_user.id=:id AND tbl_user.studentNum = tbl_studentinfo.student_num",
+        params: {
+           "id": id,
+        }
+    }, function(err, rows) {
+        if (err) {
+            return callback(err);
+        }
+
         callback(null);
     })
 }

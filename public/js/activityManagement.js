@@ -1,4 +1,4 @@
-$(function() {
+// $(function() {
     var page = 1;
     var size = 10;
     $.get("/classification/list", function(obj) {
@@ -119,7 +119,7 @@ $(function() {
     })
 
 
-})
+// })
 
 //通过ID删除活动
 function deleteById(id) {
@@ -130,7 +130,9 @@ function deleteById(id) {
                 alert("删除失败！");
             } else {
                 alert('删除成功！');
-                window.location.reload();
+                // window.location.reload();
+                getList(page, size, 0);
+                coverFun()
             }
         })
     }
@@ -174,7 +176,9 @@ $("#formSubmit").click(function() {
                 alert("修改失败,请重试！");
             }else{
                 alert("修改成功！");
-                window.location.reload();
+                // window.location.reload();
+                getList(page, size, 0);
+                coverFun()
         }
    })
 })

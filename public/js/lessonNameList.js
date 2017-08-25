@@ -1,4 +1,4 @@
-$(function() {
+// $(function() {
     var page = 1;
     var size = 20;
 
@@ -76,12 +76,14 @@ $(function() {
                 alert("修改失败,请重试！");
             } else {
                 alert("修改成功！");
-                window.location.reload();
+                // window.location.reload();
+                lessonList(page, size, 0);
+                coverFun()
             }
         })
     })
 
-})
+// })
 
 //修改
 function edit(data) {
@@ -107,7 +109,9 @@ function deleteById(id){
                 alert("删除失败！");
             } else {
                 alert('删除成功！');
-                window.location.reload();
+                // window.location.reload();
+                lessonList(page, size, 0);
+                coverFun()
             }
         })
     }

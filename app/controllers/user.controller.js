@@ -47,6 +47,69 @@ exports.resetPassword = function(req, res, next) {
 }
 
 
+/**
+ * 根据ID删除用户
+ * @param  {object}   req  the request object
+ * @param  {object}   res  the response object
+ * @param  {Function} next the next func
+ * @return {null}     
+ */
+exports.deleteData = function(req, res, next){
+    if (!req.query.userId) return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
+    var id = Number(req.query.userId)
+    user.deleteData(id,function(err) {
+        if (err) {
+            return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));
+        }
+        res.json(resUtil.generateRes(null, config.statusCode.STATUS_OK));
+    })
+}
+
+
+
+/**
+ * 根据用户Id获取语言成绩
+ * @param  {object}   req  the request object
+ * @param  {object}   res  the response object
+ * @param  {Function} next the next func
+ * @return {null}     
+ */
+// exports.getLanguageMark = function(req, res, next){
+//     if (!req.query.userId) return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
+//     var id = Number(req.query.userId)
+//     user.getLanguageMark(id,function(err,data) {
+//         if (err) {
+//             return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));
+//         }
+//         res.json(resUtil.generateRes(data, config.statusCode.STATUS_OK));
+//     })
+// }
+
+
+/**
+ * 根据用户id修改语言课成绩
+ * @param  {object}   req  the request object
+ * @param  {object}   res  the response object
+ * @param  {Function} next the next func
+ * @return {null}     
+ */
+// exports.editMark = function(req, res, next) {
+//     console.log(req.body)
+//     if(!req.body.user_id || !req.body.mark_id) return res.json(resUtil.generateRes(null, config.statusCode.STATUS_INVAILD_PARAMS));
+//     var data = {
+//         userId:parseInt(req.body.user_id),
+//         markId:parseInt(req.body.mark_id),
+//         mark:req.body.mark
+//     }
+//     user.editMark(data,function(err) {
+//         if (err) {
+//             return res.json(resUtil.generateRes(null, config.statusCode.SERVER_ERROR));
+//         }
+//        res.json(resUtil.generateRes(null, config.statusCode.STATUS_OK));
+//     })
+// }
+
+
 
 /**
  * 更新用户

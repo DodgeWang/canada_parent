@@ -74,6 +74,7 @@
     width: 100%;
     border-top: 1px solid #2d2d2b;
     border-left: 1px solid #2d2d2b;
+    table-layout: fixed;
 }
 
 .tableBox>table tr th,
@@ -85,6 +86,8 @@
     font-family: 'microsoft yahei';
     line-height: 20px;
     text-align: center;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .tableBox>table tr th {
@@ -107,6 +110,9 @@
 
 .tableBox>table tr td .red_button {
     background: red;
+}
+.tableBox>table tr td .orange_button {
+    background: #ff751a;
 }
 
 #editBox {
